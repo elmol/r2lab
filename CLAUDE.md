@@ -73,6 +73,7 @@ Delegate knowledge questions to the appropriate knowledge agents defined in AGEN
 - **Full catalog and delegation rules:** see AGENTS.md
 - Custom SDD agents extend the roster but follow the same format
 - CLAUDE.md reads AGENTS.md to decide which agent to activate per situation
+- Run agent gap detection at the start of each new phase: see `workflow/agent-gap-detection.md`
 
 ---
 

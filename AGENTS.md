@@ -38,6 +38,12 @@ Complete agent catalog for r2lab. Maps every SDD phase and knowledge role to its
 
 **orchestrator** — The agents orchestrator coordinates multi-agent tasks. Invoke when a single task spans more than one domain (e.g., architecture review that also needs story re-prioritization). It prevents context bleed between agents and ensures outputs are properly sequenced.
 
+### agent-gap-detector
+
+- **Source:** custom (`workflow/agent-gap-detection.md`)
+- **When to invoke:** User asks "what agents am I missing?" or when starting a new phase and the current agent roster may be incomplete.
+- **Output:** Prioritized list of recommended agents with install confirmation.
+
 ---
 
 ## Section 2: Knowledge Agents
