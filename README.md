@@ -27,24 +27,6 @@ r2lab does **not** write product code. Implementation happens in the product's o
 
 Each phase has a gate — a checklist that must pass before moving forward.
 
-## Project Structure
-
-```
-r2lab/
-├── CLAUDE.md                  # Main instructions for Claude Code
-├── AGENTS.md                  # Agent catalog and delegation rules
-├── context/
-│   ├── project-state.md       # Session state (created on first run)
-│   ├── discovery.md
-│   ├── product-spec.md
-│   ├── architecture.md
-│   ├── story-map.md
-│   └── specs/
-│       └── [feature-name].spec.md
-└── .claude/
-    └── agents/                # Agent definitions
-```
-
 ## Getting Started
 
 ### Prerequisites
@@ -97,6 +79,8 @@ You can also ask knowledge questions at any time:
 - "When should I use a Skill vs an Agent vs MCP?"
 - "Which MCPs should I configure for a SaaS project?"
 - "What are the best practices for structuring CLAUDE.md?"
+- "Help me design this handoff prompt" → Prompt Workshop
+- "What agents am I missing for this project?" → Agent Gap Detection
 
 ## Core Rules
 
@@ -108,7 +92,35 @@ You can also ask knowledge questions at any time:
 
 ## Agent System
 
-r2lab uses agents from the [agency-agents](https://github.com/msitarzewski/agency-agents) catalog plus custom knowledge agents. See [AGENTS.md](AGENTS.md) for the full catalog, delegation rules, and installation instructions.
+r2lab uses agents from the [agency-agents](https://github.com/msitarzewski/agency-agents) catalog plus custom agents. See [AGENTS.md](AGENTS.md) for the full catalog, delegation rules, and installation instructions.
+
+### Built-in capabilities
+
+**Agent Gap Detection** — At the start of each new SDD phase, r2lab scans the agency-agents roster and proactively suggests installing agents that are relevant to your project type but not yet installed. Ask: "What agents am I missing?"
+
+**Prompt Workshop** — A dedicated mode for designing high-stakes prompts before executing them. Runs a structured 4-question discovery process, validates the draft against a quality checklist, and offers a library of reusable patterns (handoff, multi-agent, migration, API, UI component). Also diagnoses and patches prompts that didn't work as expected.
+
+### Project structure (with new additions)
+
+```
+r2lab/
+├── CLAUDE.md                  # Main instructions for Claude Code
+├── AGENTS.md                  # Agent catalog and delegation rules
+├── workflow/
+│   └── agent-gap-detection.md # Agent gap detection process
+├── context/
+│   ├── project-state.md       # Session state (created on first run)
+│   ├── discovery.md
+│   ├── product-spec.md
+│   ├── architecture.md
+│   ├── story-map.md
+│   └── specs/
+│       └── [feature-name].spec.md
+└── .claude/
+    └── agents/                # Agent definitions
+        ├── prompt-workshop.md # Custom: prompt design and diagnosis
+        └── [agency-agents]    # Installed from agency-agents repo
+```
 
 ## License
 
