@@ -109,6 +109,23 @@ Configuration: MCPs are defined in `.claude/settings.json` under `"mcpServers"`.
 
 ---
 
+### prompt-workshop
+
+**When to invoke:** User needs to design a complex or high-stakes prompt, a prompt failed and needs diagnosis, or when preparing an SDD handoff prompt.
+
+**Agent file:** `.claude/agents/prompt-workshop.md`
+
+**Capabilities:**
+
+- Structured 4-question discovery process to understand the prompt's goal, context, outputs, and failure modes
+- Draft review against a 6-point quality checklist
+- Library of reusable prompt patterns: SDD handoff, multi-agent orchestration, spec compliance review, database migration, API endpoint, UI component with all states
+- Iteration protocol for diagnosing and patching prompts that didn't work as expected
+
+**Output:** A reviewed, checklist-validated prompt ready to execute in Claude Code.
+
+---
+
 ## Section 3: Installation Guide
 
 ### Prerequisites
