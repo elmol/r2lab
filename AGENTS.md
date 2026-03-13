@@ -9,26 +9,23 @@ Complete agent catalog for r2lab. Maps every SDD phase and knowledge role to its
 | Role | Source | Agent File | When to Invoke | Primary Output |
 |------|--------|------------|----------------|----------------|
 | discovery-agent | agency-agents | `product-trend-researcher.md` + `design-ux-researcher.md` | Phase 1 — understanding the problem, users, and constraints | `context/discovery.md` |
-| spec-agent | agency-agents | `project-manager-senior.md` | Phase 2 — defining what the product does and doesn't do | `context/product-spec.md` |
+| story-agent | agency-agents | `product-sprint-prioritizer.md` | Phase 2 — story mapping: user activities, walking skeleton, scope, non-goals | `context/story-map.md` |
 | architecture-agent | agency-agents | `engineering-backend-architect.md` | Phase 3 — choosing tech stack, system boundaries, data model | `context/architecture.md` |
-| story-agent | agency-agents | `product-sprint-prioritizer.md` | Phase 4 — breaking the product into deliverable user stories | `context/story-map.md` |
-| feature-spec-agent | agency-agents | `project-manager-senior.md` | Phase 5 — writing detailed specs per feature/story | `context/specs/[feature-name].spec.md` |
-| handoff-agent | agency-agents | `engineering-senior-developer.md` | Phase 6 — generating implementation prompts for the product project | Handoff prompts in `context/handoff/` |
-| review-agent | agency-agents | `testing-reality-checker.md` | Phase 7 — verifying specs against requirements and consistency | Review report appended to relevant artifacts |
-| readiness-agent | agency-agents | `engineering-devops-automator.md` | Phase 8 — final checklist for deploy, monitoring, and launch | `context/production-readiness.md` |
+| feature-spec-agent | agency-agents | `project-manager-senior.md` | Phase 4 — writing detailed specs per feature/story | `context/specs/[feature-name].spec.md` |
+| handoff-agent | agency-agents | `engineering-senior-developer.md` | Phase 5 — generating implementation prompts for the product project | Handoff prompts in `context/handoff/` |
+| review-agent | agency-agents | `testing-reality-checker.md` | Phase 6 — verifying specs against requirements and consistency | Review report appended to relevant artifacts |
+| readiness-agent | agency-agents | `engineering-devops-automator.md` | Phase 7 — final checklist for deploy, monitoring, and launch | `context/production-readiness.md` |
 | orchestrator | agency-agents | `specialized-agents-orchestrator.md` | When a task requires more than one agent working in sequence | Coordination plan and delegated outputs |
 
 ### Agent Details
 
 **discovery-agent** — Two agents working together. The trend researcher identifies market context and opportunity; the UX researcher focuses on user needs, pain points, and validation questions. Together they produce a complete discovery document. Invoke both and synthesize their outputs.
 
-**spec-agent** — The senior project manager translates discovery findings into a structured product spec: scope, features, non-goals, success criteria. Gates Phase 2 by ensuring every discovery question has an answer.
+**story-agent** — The sprint prioritizer takes discovery findings and builds a Jeff Patton-style story map. The map replaces the traditional product spec: the backbone (user activities left to right) defines what the product does, the walking skeleton (first row) defines the MVP, and everything below the cut line is a non-goal. This merges the old "Product Spec" and "Story Mapping" phases into a single, agile-friendly phase. Output is `context/story-map.md`.
 
 **architecture-agent** — The backend architect designs the technical foundation: stack choices, service boundaries, data model, API surface. Produces a decision-record style document with trade-offs for each choice.
 
-**story-agent** — The sprint prioritizer takes the product spec and architecture, then maps them into epics and user stories ordered by value and dependency. Output is a prioritized story map ready for feature specs.
-
-**feature-spec-agent** — Same senior PM agent as Phase 2, now scoped to individual features. Each spec covers acceptance criteria, edge cases, data requirements, and UI behavior. One spec file per feature.
+**feature-spec-agent** — The senior project manager, scoped to individual features from the story map. Each spec covers acceptance criteria, edge cases, data requirements, and UI behavior. One spec file per feature.
 
 **handoff-agent** — The senior developer generates implementation-ready prompts for the product project. Each prompt references the relevant spec, defines expected output files, and includes a validation step. This is the bridge between r2lab and the actual codebase.
 
@@ -82,9 +79,9 @@ Recommended MCPs by project type:
 
 SDD workflow integration:
 
-- **Phase 4 (Story Mapping):** GitHub MCP to create issues directly from stories
-- **Phase 6 (Handoff):** filesystem MCP to write specs into the product project
-- **Phase 7 (Review):** GitHub MCP to open PRs and post review comments
+- **Phase 2 (Story Mapping):** GitHub MCP to create issues directly from stories
+- **Phase 5 (Handoff):** filesystem MCP to write specs into the product project
+- **Phase 6 (Review):** GitHub MCP to open PRs and post review comments
 
 Configuration: MCPs are defined in `.claude/settings.json` under `"mcpServers"`. Always recommend **context7** as a baseline for any Claude Code project — it gives Claude access to current library documentation.
 

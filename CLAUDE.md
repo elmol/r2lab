@@ -42,13 +42,22 @@ If `context/project-state.md` does not exist → assume **Phase 1 (Discovery)**,
 | Phase | Name                  | Goal                                              | Agent              |
 |-------|-----------------------|---------------------------------------------------|--------------------|
 | 1     | Discovery             | Understand the problem, users, and constraints    | discovery-agent    |
-| 2     | Product Spec          | Define what the product does and doesn't do       | spec-agent         |
+| 2     | Story Mapping         | Map user activities, define walking skeleton and scope | story-agent    |
 | 3     | Architecture          | Choose tech stack, system boundaries, data model  | architecture-agent |
-| 4     | Story Mapping         | Break the product into deliverable user stories   | story-agent        |
-| 5     | Feature Specs         | Write detailed specs per feature/story            | feature-spec-agent |
-| 6     | Implementation Handoff| Generate prompts for the real product project     | handoff-agent      |
-| 7     | Review & Validation   | Verify specs against requirements and consistency | review-agent       |
-| 8     | Production Readiness  | Final checklist: deploy, monitor, launch plan     | readiness-agent    |
+| 4     | Feature Specs         | Write detailed specs per feature/story            | feature-spec-agent |
+| 5     | Implementation Handoff| Generate prompts for the real product project     | handoff-agent      |
+| 6     | Review & Validation   | Verify specs against requirements and consistency | review-agent       |
+| 7     | Production Readiness  | Final checklist: deploy, monitor, launch plan     | readiness-agent    |
+
+### Story Mapping as Product Spec
+
+Phase 2 uses Jeff Patton's Story Mapping approach. The story map replaces the traditional product spec document by expressing scope as a map rather than a static document:
+- **Backbone** (left to right) = user activities — defines what the product does
+- **Walking skeleton** (first row) = minimum tasks per activity — defines the MVP
+- **Below the line** = non-goals for the current release
+- **Success criteria** emerge from the walking skeleton stories
+
+This merges what were previously separate "Product Spec" and "Story Mapping" phases into a single, more agile-friendly phase.
 
 Agent details, invocation rules, and full definitions live in **AGENTS.md**.
 
@@ -112,9 +121,8 @@ r2lab/
 ├── context/
 │   ├── project-state.md      <- created on first session
 │   ├── discovery.md
-│   ├── product-spec.md
+│   ├── story-map.md           <- replaces product-spec.md (Patton's Story Mapping)
 │   ├── architecture.md
-│   ├── story-map.md
 │   └── specs/
 │       └── [feature-name].spec.md
 └── .claude/

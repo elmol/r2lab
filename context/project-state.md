@@ -1,12 +1,12 @@
 # Project State
 
 ## Status
-- **Phase:** 1 — Discovery (COMPLETE)
+- **Phase:** 2 — Story Mapping (COMPLETE)
 - **Started:** 2026-03-12
 - **Last session:** 2026-03-12
 
 ## Last Session Summary
-Completed Phase 1 Discovery for HardTrust. Defined actors (Device Owner, Attester, public verification), end-to-end flow (initialize → attest → emit → verify), demo scenario (two RPis, one attested). Trend research validated positioning ("the Arduino of DePIN identity" — no one occupies the simple/open/EVM/educational space). UX research identified Attester as bottleneck and console-to-portal data transfer as riskiest step. Named the project HardTrust.
+Completed Phase 2 Story Mapping for HardTrust. Built Jeff Patton-style story map with 3 horizontal slices: Slice 1 (CLI end-to-end, 6 stories), Slice 2 (web portal, 5 stories), Slice 3 (demo polish, 4 stories). Plus Release 2 (7 stories below the line). Merged old Product Spec and Story Mapping phases into a single Phase 2. Sprint Prioritizer agent used for story mapping instead of Senior PM.
 
 ## Current Product
 - **Name:** HardTrust
@@ -16,13 +16,12 @@ Completed Phase 1 Discovery for HardTrust. Defined actors (Device Owner, Atteste
 | Phase | Status | Completed |
 |-------|--------|-----------|
 | 1 — Discovery | ✅ Complete | 2026-03-12 |
-| 2 — Product Spec | 🔄 Next | — |
+| 2 — Story Mapping | ✅ Complete | 2026-03-13 |
 | 3 — Architecture | ⏳ Pending | — |
-| 4 — Story Mapping | ⏳ Pending | — |
-| 5 — Feature Specs | ⏳ Pending | — |
-| 6 — Implementation Handoff | ⏳ Pending | — |
-| 7 — Review & Validation | ⏳ Pending | — |
-| 8 — Production Readiness | ⏳ Pending | — |
+| 4 — Feature Specs | ⏳ Pending | — |
+| 5 — Implementation Handoff | ⏳ Pending | — |
+| 6 — Review & Validation | ⏳ Pending | — |
+| 7 — Production Readiness | ⏳ Pending | — |
 
 ## Discovery Artifacts
 - `context/discovery.md` — Core discovery document
@@ -34,5 +33,8 @@ Completed Phase 1 Discovery for HardTrust. Defined actors (Device Owner, Atteste
 - Portal stack (to be decided in Architecture phase)
 - Data emission frequency and storage strategy
 
+## Story Mapping Artifacts
+- `context/story-map.md` — Full story map with 3 slices + Release 2
+
 ## Next Action
-Begin Phase 2 — Product Spec: define scope, features, non-goals, and success criteria.
+Begin Phase 3 — Architecture: choose tech stack, system boundaries, data model based on story map.
