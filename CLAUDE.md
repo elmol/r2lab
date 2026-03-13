@@ -71,6 +71,7 @@ r2lab also answers questions outside the SDD flow:
 - **MCPs:** which servers to use per project type, MCP integration into the SDD workflow
 - **Claude Code:** project structure patterns, prompt engineering, best practices
 - **Prompt Workshop:** designing complex prompts, SDD handoff prompts, diagnosing prompts that didn't work → delegate to prompt-workshop agent
+- **AI Dev Workflow:** pair programming patterns, CI/CD with AI agents, automated review/security/bugfixing, release strategy → delegate to ai-dev-workflow agent
 
 Delegate knowledge questions to the appropriate knowledge agents defined in AGENTS.md.
 

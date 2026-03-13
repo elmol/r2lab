@@ -1,12 +1,12 @@
 # Project State
 
 ## Status
-- **Phase:** 2 — Story Mapping (COMPLETE)
+- **Phase:** 3 — Architecture (COMPLETE)
 - **Started:** 2026-03-12
-- **Last session:** 2026-03-12
+- **Last session:** 2026-03-13
 
 ## Last Session Summary
-Completed Phase 2 Story Mapping for HardTrust. Built Jeff Patton-style story map with 3 horizontal slices: Slice 1 (CLI end-to-end, 6 stories), Slice 2 (web portal, 5 stories), Slice 3 (demo polish, 4 stories). Plus Release 2 (7 stories below the line). Merged old Product Spec and Story Mapping phases into a single Phase 2. Sprint Prioritizer agent used for story mapping instead of Senior PM.
+Completed Phase 3 Architecture for HardTrust. Defined monorepo structure (device/, attester/, common/, contracts/, webapp/), secp256k1/ECDSA crypto, hybrid storage (on-chain registry, off-chain data), incremental data pipeline (JSON local → API → IPFS), CI/CD with GitHub Actions, and AI-assisted development workflow. Created ai-dev-workflow agent for development process architecture.
 
 ## Current Product
 - **Name:** HardTrust
@@ -17,7 +17,7 @@ Completed Phase 2 Story Mapping for HardTrust. Built Jeff Patton-style story map
 |-------|--------|-----------|
 | 1 — Discovery | ✅ Complete | 2026-03-12 |
 | 2 — Story Mapping | ✅ Complete | 2026-03-13 |
-| 3 — Architecture | ⏳ Pending | — |
+| 3 — Architecture | ✅ Complete | 2026-03-13 |
 | 4 — Feature Specs | ⏳ Pending | — |
 | 5 — Implementation Handoff | ⏳ Pending | — |
 | 6 — Review & Validation | ⏳ Pending | — |
@@ -28,13 +28,15 @@ Completed Phase 2 Story Mapping for HardTrust. Built Jeff Patton-style story map
 - `context/research-depin-device-identity.md` — Trend research (DePIN landscape, competitors, patterns)
 - `context/ux-research-report.md` — UX research (personas, pain points, recommendations)
 
-## Open Questions
-- Smart contract architecture: single registry contract or modular?
-- Portal stack (to be decided in Architecture phase)
-- Data emission frequency and storage strategy
-
 ## Story Mapping Artifacts
 - `context/story-map.md` — Full story map with 3 slices + Release 2
 
+## Architecture Artifacts
+- `context/architecture.md` — System architecture, components, data flow, crypto, CI/CD, dev workflow
+
+## Open Questions
+- Resolved: smart contract (single contract), storage (hybrid), crypto (secp256k1)
+- Remaining open decisions deferred to feature specs (see architecture.md Section 9)
+
 ## Next Action
-Begin Phase 3 — Architecture: choose tech stack, system boundaries, data model based on story map.
+Begin Phase 4 — Feature Specs: write detailed specs per story, starting with Slice 1 (CLI end-to-end).

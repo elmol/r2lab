@@ -123,6 +123,25 @@ Configuration: MCPs are defined in `.claude/settings.json` under `"mcpServers"`.
 
 ---
 
+### ai-dev-workflow
+
+**When to invoke:** Defining the development workflow for a new project, setting up CI/CD pipeline architecture, choosing skills and tools for quality automation, designing pair programming patterns between agents, or troubleshooting a broken development loop.
+
+**Agent file:** `.claude/agents/ai-dev-workflow.md`
+
+**Capabilities:**
+
+- Development loop design: plan → implement → test → review → fix → commit → CI → release
+- Pair programming patterns: writer-reviewer cycles, human-in-the-loop, multi-agent parallel
+- CI/CD quality gates: lint, test, integration, e2e, security review, code review
+- Recommended skills: Trail of Bits security skills, `claude-code-security-review` GitHub Action, Claude Code Review (multi-agent PR analysis)
+- Automated bugfixing workflow: failing test → diagnose → patch → verify → regression check
+- Release strategy: SemVer, conventional commits, automated changelog
+
+**Output:** Development workflow architecture document defining how Claude Code and AI agents collaborate across the implementation lifecycle.
+
+---
+
 ## Section 3: Installation Guide
 
 ### Prerequisites
