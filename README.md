@@ -6,7 +6,7 @@ Inspired by R2-D2 — the co-pilot that navigates, guides, and makes everything 
 
 r2lab is an **SDD (Spec Driven Development) orchestrator** that guides software products from discovery to production using [Claude Code](https://docs.anthropic.com/en/docs/claude-code). It's a co-pilot for building products right — **specs first, code second**.
 
-- Orchestrates the full product lifecycle: discovery, spec, architecture, stories, implementation handoff, review, and launch
+- Orchestrates the full product lifecycle: discovery, story mapping, architecture, feature specs, implementation handoff, review, and launch
 - Provides knowledge support for Claude Code best practices: Skills, MCPs, agents, and workflow patterns
 - Keeps all artifacts organized in a structured `context/` directory
 
@@ -17,13 +17,14 @@ r2lab does **not** write product code. Implementation happens in the product's o
 | Phase | Name                   | Goal                                              |
 |-------|------------------------|---------------------------------------------------|
 | 1     | Discovery              | Understand the problem, users, and constraints    |
-| 2     | Product Spec           | Define what the product does and doesn't do       |
+| 2     | Story Mapping          | Map user activities, define walking skeleton and scope |
 | 3     | Architecture           | Choose tech stack, system boundaries, data model  |
-| 4     | Story Mapping          | Break the product into deliverable user stories   |
-| 5     | Feature Specs          | Write detailed specs per feature/story            |
-| 6     | Implementation Handoff | Generate prompts for the real product project     |
-| 7     | Review & Validation    | Verify specs against requirements and consistency |
-| 8     | Production Readiness   | Final checklist: deploy, monitor, launch plan     |
+| 4     | Feature Specs          | Write detailed specs per feature/story            |
+| 5     | Implementation Handoff | Generate prompts for the real product project     |
+| 6     | Review & Validation    | Verify specs against requirements and consistency |
+| 7     | Production Readiness   | Final checklist: deploy, monitor, launch plan     |
+
+Phase 2 uses [Jeff Patton's Story Mapping](https://jpattonassociates.com/story-mapping/) approach — the story map replaces the traditional product spec by expressing scope as a visual narrative with horizontal slices (walking skeleton first, then incremental releases).
 
 Each phase has a gate — a checklist that must pass before moving forward.
 
@@ -111,9 +112,8 @@ r2lab/
 ├── context/
 │   ├── project-state.md       # Session state (created on first run)
 │   ├── discovery.md
-│   ├── product-spec.md
+│   ├── story-map.md           # Patton's Story Mapping (replaces product-spec)
 │   ├── architecture.md
-│   ├── story-map.md
 │   └── specs/
 │       └── [feature-name].spec.md
 └── .claude/
