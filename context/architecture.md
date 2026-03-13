@@ -375,15 +375,87 @@ The `device/` crate supports an emulation mode for CI and development without ph
 | Alloy | Rust library for EVM interaction |
 | Foundry (forge, anvil, cast) | Solidity development, testing, local chain |
 
-## 8. Release Strategy
+## 8. Architecture Decision Records (ADRs)
 
-### 8.1 Versioning
+### 8.1 Purpose
+
+ADRs capture significant technical and architectural decisions made during implementation. They preserve the **why** behind decisions so that future sessions (with Claude Code or humans) have context without re-discovering rationale.
+
+This is especially important in AI-assisted development where each session starts without memory of prior decisions.
+
+### 8.2 Location
+
+```
+hardtrust/
+└── docs/
+    └── adr/
+        ├── 0001-monorepo-flat-structure.md
+        ├── 0002-secp256k1-over-ed25519.md
+        ├── 0003-alloy-for-evm-bindings.md
+        └── ...
+```
+
+### 8.3 Template
+
+Each ADR follows this format:
+
+```markdown
+# ADR-NNNN: [Title]
+
+## Status
+[Proposed | Accepted | Deprecated | Superseded by ADR-XXXX]
+
+## Context
+[What is the problem or decision that needs to be made?]
+
+## Decision
+[What was decided and why?]
+
+## Consequences
+[What are the positive and negative consequences of this decision?]
+
+## Alternatives Considered
+[What other options were evaluated and why were they rejected?]
+```
+
+### 8.4 When to Create an ADR
+
+During implementation, Claude Code should create an ADR when:
+- Choosing between two or more viable technical approaches
+- Deviating from the architecture spec (with justification)
+- Introducing a new dependency or tool
+- Changing a data structure, API contract, or storage strategy
+- Making a decision that would be non-obvious to a future reader
+
+### 8.5 Implementation
+
+- The HardTrust `CLAUDE.md` should include a rule: "When making a significant architectural or technical decision, create an ADR"
+- A `/adr` skill can be created in HardTrust to generate ADRs from a consistent template
+- ADRs are numbered sequentially (0001, 0002, ...) and never deleted — superseded ADRs are marked as such
+- ADRs are committed alongside the code change that implements the decision
+
+### 8.6 Seed ADRs
+
+The following decisions from this architecture document should be captured as initial ADRs when the HardTrust repository is created:
+
+| ADR | Decision |
+|-----|----------|
+| 0001 | Monorepo flat structure (device/, attester/, common/, contracts/, webapp/) |
+| 0002 | secp256k1/ECDSA over ed25519 for EVM compatibility |
+| 0003 | Alloy for Rust-EVM bindings over ethers-rs |
+| 0004 | Single smart contract for registry + attestation |
+| 0005 | Hybrid storage: registration on-chain, data off-chain |
+| 0006 | Emulation mode for CI without physical hardware |
+
+## 9. Release Strategy
+
+### 9.1 Versioning
 
 - **SemVer** (MAJOR.MINOR.PATCH) for the project as a whole
 - Single version across the monorepo during MVP
 - **Conventional commits** for all commit messages (enables automated changelog)
 
-### 8.2 Environments
+### 9.2 Environments
 
 | Environment | Chain | Purpose | Deploy trigger |
 |-------------|-------|---------|----------------|
@@ -392,7 +464,7 @@ The `device/` crate supports an emulation mode for CI and development without ph
 
 Production deployment is out of scope for the walking skeleton.
 
-### 8.3 Deploy Flow
+### 9.3 Deploy Flow
 
 ```
 Feature branch → PR → Review + CI → Merge to main → Tag (vX.Y.Z) → CI builds → Deploy to Sepolia
@@ -400,7 +472,7 @@ Feature branch → PR → Review + CI → Merge to main → Tag (vX.Y.Z) → CI 
 
 Contract deployment to Sepolia uses Foundry deploy scripts. Webapp hosting decision deferred to feature specs.
 
-### 8.4 Slice Delivery Sequence
+### 9.4 Slice Delivery Sequence
 
 Aligned with the story map:
 
@@ -410,7 +482,7 @@ Aligned with the story map:
 
 Each slice is a deployable increment. Slice 1 is the foundation that all subsequent slices build on without replacing.
 
-## 9. Open Decisions
+## 10. Open Decisions
 
 These items are deliberately deferred to feature specs or implementation phase.
 
