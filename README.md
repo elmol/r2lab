@@ -101,7 +101,9 @@ r2lab uses agents from the [agency-agents](https://github.com/msitarzewski/agenc
 
 **Prompt Workshop** — A dedicated mode for designing high-stakes prompts before executing them. Runs a structured 4-question discovery process, validates the draft against a quality checklist, and offers a library of reusable patterns (handoff, multi-agent, migration, API, UI component). Also diagnoses and patches prompts that didn't work as expected.
 
-### Project structure (with new additions)
+**AI Dev Workflow** — Defines how Claude Code and AI agents collaborate across the development lifecycle: writer-reviewer pair programming cycles, CI/CD quality gates (lint, test, integration, e2e, security review, code review), automated bugfixing workflows, release strategy with SemVer, and recommended skills (Trail of Bits security skills, `claude-code-security-review`, Claude Code Review).
+
+### Project structure
 
 ```
 r2lab/
@@ -119,6 +121,7 @@ r2lab/
 └── .claude/
     └── agents/                # Agent definitions
         ├── prompt-workshop.md # Custom: prompt design and diagnosis
+        ├── ai-dev-workflow.md # Custom: AI-assisted development workflow
         └── [agency-agents]    # Installed from agency-agents repo
 ```
 

@@ -96,6 +96,7 @@ Delegate knowledge questions to the appropriate knowledge agents defined in AGEN
 4. **`context/project-state.md` updated at the end of every session**
 5. **One question at a time** during discovery sessions
 6. **Always surface risks and trade-offs explicitly**
+7. **README sync check before every push** — verify that `README.md` reflects any changes to the workflow, agents, capabilities, or project structure before pushing to the repository
 
 ---
 
