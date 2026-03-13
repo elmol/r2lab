@@ -116,12 +116,15 @@ r2lab/
 │   ├── discovery.md
 │   ├── story-map.md           # Patton's Story Mapping (replaces product-spec)
 │   ├── architecture.md
-│   └── specs/
+│   ├── stories/               # Refined user stories per slice
+│   │   └── slice-1/
+│   └── specs/                 # Detailed feature specs (created at handoff)
 │       └── [feature-name].spec.md
 └── .claude/
     └── agents/                # Agent definitions
         ├── prompt-workshop.md # Custom: prompt design and diagnosis
         ├── ai-dev-workflow.md # Custom: AI-assisted development workflow
+        ├── story-refiner.md  # Custom: backlog grooming facilitator
         └── [agency-agents]    # Installed from agency-agents repo
 ```
 

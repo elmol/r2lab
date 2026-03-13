@@ -125,8 +125,11 @@ r2lab/
 │   ├── discovery.md
 │   ├── story-map.md           <- replaces product-spec.md (Patton's Story Mapping)
 │   ├── architecture.md
+│   ├── stories/
+│   │   └── slice-N/
+│   │       └── [story-id]-[name].md    <- refined user stories
 │   └── specs/
-│       └── [feature-name].spec.md
+│       └── [feature-name].spec.md      <- detailed feature specs (created at handoff)
 └── .claude/
     └── agents/
         └── [agent files from agency-agents + custom]

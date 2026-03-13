@@ -18,7 +18,7 @@ Completed Phase 3 Architecture for HardTrust. Defined monorepo structure (device
 | 1 — Discovery | ✅ Complete | 2026-03-12 |
 | 2 — Story Mapping | ✅ Complete | 2026-03-13 |
 | 3 — Architecture | ✅ Complete | 2026-03-13 |
-| 4 — Feature Specs | ⏳ Pending | — |
+| 4 — Feature Specs | 🔄 In Progress | — |
 | 5 — Implementation Handoff | ⏳ Pending | — |
 | 6 — Review & Validation | ⏳ Pending | — |
 | 7 — Production Readiness | ⏳ Pending | — |
@@ -34,9 +34,12 @@ Completed Phase 3 Architecture for HardTrust. Defined monorepo structure (device
 ## Architecture Artifacts
 - `context/architecture.md` — System architecture, components, data flow, crypto, CI/CD, dev workflow
 
+## Stories Artifacts
+- `context/stories/slice-1/` — 6 refined user stories for Slice 1 (CLI end-to-end)
+
 ## Open Questions
 - Resolved: smart contract (single contract), storage (hybrid), crypto (secp256k1)
-- Remaining open decisions deferred to feature specs (see architecture.md Section 9)
+- Remaining open decisions deferred to feature specs (see architecture.md Section 10)
 
 ## Next Action
-Begin Phase 4 — Feature Specs: write detailed specs per story, starting with Slice 1 (CLI end-to-end).
+Phase 4 — Continue refining stories for Slice 2, or begin Phase 5 — Implementation Handoff for Slice 1.

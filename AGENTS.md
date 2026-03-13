@@ -142,6 +142,23 @@ Configuration: MCPs are defined in `.claude/settings.json` under `"mcpServers"`.
 
 ---
 
+### story-refiner
+
+**When to invoke:** During Phase 4 (Feature Specs) for iterative backlog grooming. Refines one user story at a time through dialogue — produces acceptance criteria, edge cases, dependencies, and a feature spec ready for implementation handoff.
+
+**Agent file:** `.claude/agents/story-refiner.md`
+
+**Capabilities:**
+
+- Collaborative refinement process: present → clarify → acceptance criteria → edge cases → dependencies → definition of done → spec
+- Given/When/Then acceptance criteria or testable checklists
+- Edge case identification and scope control (splits stories that are too big)
+- Produces `context/specs/[story-id].spec.md` for each refined story
+
+**Output:** One feature spec file per story, ready for Phase 5 (Implementation Handoff).
+
+---
+
 ## Section 3: Installation Guide
 
 ### Prerequisites
