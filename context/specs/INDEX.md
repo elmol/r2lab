@@ -11,7 +11,8 @@ Traceability map between user stories, specs, and handoff prompts.
 | S0.3 | [AI Workflow Setup](s0.3-ai-workflow-setup.spec.md) | — | Implemented | [s0.3-handoff](../handoff/s0.3-handoff.md) |
 | S0.4 | [Seed ADRs](s0.4-seed-adrs.spec.md) | — | Implemented | [s0.4-handoff](../handoff/s0.4-handoff.md) |
 | S0.5 | [AI Dev Practices](s0.5-ai-dev-practices.spec.md) | — | Implemented | [s0.5-handoff](../handoff/s0.5-handoff.md) |
-| S0.6 | [CLAUDE.md Updates](s0.6-hardtrust-claude-md-updates.spec.md) | — | Draft | [s0.6-handoff](../handoff/s0.6-handoff.md) |
+| S0.6 | [CLAUDE.md Updates](s0.6-hardtrust-claude-md-updates.spec.md) | — | Implemented | [s0.6-handoff](../handoff/s0.6-handoff.md) |
+| S0.7 | [Solidity Static Analysis](s0.7-solidity-static-analysis.spec.md) | — | Draft | [s0.7-handoff](../handoff/s0.7-handoff.md) |
 
 ## Slice 1 — CLI/Console
 
