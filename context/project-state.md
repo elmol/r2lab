@@ -6,7 +6,7 @@
 - **Last session:** 2026-03-14
 
 ## Last Session Summary
-S0.6 (CLAUDE.md updates) and S0.7 (Solidity static analysis + pre-commit validation) implemented. S1a.1-V1 (registry contract) implemented with custom errors. Executing S1a.1 story handoffs sequentially.
+S1a.1 complete — all 4 vertical specs (V1-V4) implemented and reviewed. Registry contract, device CLI, attester CLI, and e2e validation all passing. Phase 6 review found no critical issues. Ready to write S1a.2 specs.
 
 ## Current Product
 - **Name:** HardTrust
@@ -40,7 +40,7 @@ S0.6 (CLAUDE.md updates) and S0.7 (Solidity static analysis + pre-commit validat
 
 ## Specs & Handoffs
 - `context/specs/INDEX.md` — Traceability index (stories ↔ specs ↔ handoffs)
-- `context/specs/` — 11 specs (S0.1-S0.7 implemented, S1a.1 V1 implemented, V2-V4 review)
+- `context/specs/` — 11 specs (S0.1-S0.7 implemented, S1a.1 V1-V4 implemented)
 - `context/handoff/` — 8 handoff files (S0.1-S0.7, S1a overview)
 
 ## HardTrust Repo State
@@ -60,4 +60,4 @@ S0.6 (CLAUDE.md updates) and S0.7 (Solidity static analysis + pre-commit validat
 - Remaining open decisions deferred to feature specs (see architecture.md Section 10)
 
 ## Next Action
-Execute S1a.1-V2 (device CLI) handoff, then V3 (attester CLI), then V4 (e2e validation).
+Write specs for S1a.2 (verify registered device). S1a.1 story is complete.
