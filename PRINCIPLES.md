@@ -100,3 +100,17 @@ Current approach: manual sync at every handoff step.
 ## 8. Discuss Before Formalizing
 
 Don't rush to close phases. Brainstorm back and forth before committing to artifacts. When agents drift into technical details during product-focused phases, redirect them. The user's judgment shapes the process — r2lab proposes, the user decides.
+
+---
+
+## 9. Horizontal Slicing Over Vertical Stories
+
+User stories are vertical (one feature end-to-end). But implementation should be sliced **horizontally** — thin end-to-end passes through all layers. Each horizontal slice is a walking skeleton that gets thicker with each iteration.
+
+- **Slice 1a:** Hardcode everything, prove the chain works (no real crypto, no error handling, fake data)
+- **Slice 1b:** Replace shortcuts with real behavior (real crypto, emulation mode, validation)
+- **Slice 1c:** Edge cases, CI integration, polish
+
+This means specs are per **sub-slice**, not per story. A sub-slice touches multiple stories partially. The stories remain as reference for full acceptance criteria, but implementation is organized by horizontal layers.
+
+Avoid premature abstractions (e.g., don't create a `common/` crate in 1a when hardcoded values suffice). Let shared code emerge from actual duplication, not from anticipated need.

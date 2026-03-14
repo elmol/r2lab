@@ -141,14 +141,22 @@ Stories that improve the workshop experience and system robustness but are not r
 
 ## Implementation Sequence
 
+Slice 1 is implemented as horizontal sub-slices (end-to-end layers):
+
 ```
-Slice 1 (CLI):     S1.1 → S1.2 → S1.3 → S1.4 → S1.5 → S1.6
+Slice 1a (The Wire):     Hardcoded end-to-end → init, deploy, register, emit, verify
+Slice 1b (Real Crypto):  Replace shortcuts → secp256k1, emulation, error handling, query
+Slice 1c (Polish & CI):  Edge cases → filesystem errors, integration tests, e2e automation
+```
+
+```
 Slice 2 (Webapp):  S2.1 → S2.2 → S2.5 → S2.3 → S2.4
 Slice 3 (Polish):  S3.4 → S3.1 → S3.2 → S3.3
 Release 2:         Prioritize by workshop scale (R2.1 and R2.4 first for large workshops)
 ```
 
-Refined stories with acceptance criteria, edge cases, and dependencies live in `context/stories/`.
+Refined stories with acceptance criteria live in `context/stories/`.
+Sub-slice definitions and AC coverage in `context/stories/slice-1/README.md`.
 
 ## Story Count
 
