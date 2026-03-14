@@ -19,22 +19,24 @@ A1: Initialize Device       A2: Verify & Register       A3: Emit Signed Data    
 
 **Demo:** A terminal session showing: device init, contract deployment, attester registration on-chain, signed data emission, and CLI-based verification that distinguishes a registered device from an unregistered one.
 
-### Implementation Sub-Slices
+### Sub-Slice Stories (what gets implemented)
 
-Slice 1 is implemented as **horizontal sub-slices** (thin end-to-end passes through all layers), not vertically per story. Each sub-slice touches multiple stories incrementally. See [stories/slice-1/README.md](stories/slice-1/README.md) for the full AC coverage map.
+Slice 1 is implemented as **horizontal sub-slices** — thin end-to-end passes through all layers. Each sub-slice has its own user story and specs. See [stories/slice-1/README.md](stories/slice-1/README.md) for specs and AC coverage.
 
-| Sub-Slice | Name | Goal |
-|-----------|------|------|
-| **1a** | The Wire | Hardcoded end-to-end — prove the chain works, no crypto |
-| **1b** | Real Crypto | Replace shortcuts — secp256k1, emulation, error handling, query |
-| **1c** | Polish & CI | Edge cases, integration tests, e2e automation |
+| Sub-Slice | Story | Goal |
+|-----------|-------|------|
+| **S1a** | As anyone, I can verify whether a data reading comes from a registered device so that I can distinguish trusted from untrusted sources | Hardcoded end-to-end — prove the chain works, no crypto |
+| **S1b** | TBD | Replace shortcuts — secp256k1, emulation, error handling, query |
+| **S1c** | TBD | Edge cases, integration tests, e2e automation |
 
-### Stories
+### Full-Scope Stories (AC reference)
+
+These define the complete acceptance criteria across all sub-slices. Each sub-slice covers a portion of these ACs incrementally.
 
 | Activity | Story | Description |
 |----------|-------|-------------|
 | A1: Initialize Device | **S1.1** | As a Device Owner, I run the init command on my RPi so that the device generates a unique identity tied to its hardware serial |
-| A2: Verify & Register | **S1.2** | As a developer, I deploy the registry contract to a local chain with a pre-registered attester so that the system is ready to register devices |
+| A2: Verify & Register | **S1.2** | As an Attester, I deploy the registry contract to a local chain with a pre-registered attester so that the system is ready to register devices |
 | A2: Verify & Register | **S1.3** | As an Attester, I register a device on-chain using the CLI so that the device is recognized as attested in the network |
 | A2: Verify & Register | **S1.4** | As anyone, I query a device's registration status via CLI so that I can check whether it is attested |
 | A3: Emit Signed Data | **S1.5** | As a Device Owner, I run the emit command so that my device produces a signed data reading stored locally |
@@ -136,32 +138,25 @@ Stories that improve the workshop experience and system robustness but are not r
 
 ## Implementation Sequence
 
-Slice 1 is implemented as horizontal sub-slices (end-to-end layers):
+Each slice is implemented as horizontal sub-slices (thin end-to-end passes). Sub-slicing is done incrementally — only the current slice is detailed.
 
 ```
-Slice 1a (The Wire):     Hardcoded end-to-end → init, deploy, register, emit, verify
-Slice 1b (Real Crypto):  Replace shortcuts → secp256k1, emulation, error handling, query
-Slice 1c (Polish & CI):  Edge cases → filesystem errors, integration tests, e2e automation
+Slice 1: S1a (The Wire) → S1b (Real Crypto) → S1c (Polish & CI)
+Slice 2: Sub-slicing TBD when we reach it
+Slice 3: Sub-slicing TBD when we reach it
+Release 2: Prioritize by workshop scale (R2.1 and R2.4 first for large workshops)
 ```
 
-```
-Slice 2 (Webapp):  S2.1 → S2.2 → S2.5 → S2.3 → S2.4
-Slice 3 (Polish):  S3.4 → S3.1 → S3.2 → S3.3
-Release 2:         Prioritize by workshop scale (R2.1 and R2.4 first for large workshops)
-```
-
-Refined stories with acceptance criteria live in `context/stories/`.
-Sub-slice definitions and AC coverage in `context/stories/slice-1/README.md`.
+Sub-slice stories, specs, and AC coverage in `context/stories/slice-1/README.md`.
 
 ## Story Count
 
-| Slice | Stories | Scope |
-|-------|---------|-------|
-| Slice 1 — CLI | 6 | Full end-to-end proof via console |
-| Slice 2 — Webapp | 5 | Web UI for attestation and verification |
-| Slice 3 — Polish | 4 | Demo-ready presentation view |
-| Release 2 | 7 | Workshop UX improvements |
-| **Total mapped** | **22** | |
+| Slice | Sub-Slice Stories | Full-Scope Stories | Scope |
+|-------|-------------------|-------------------|-------|
+| Slice 1 — CLI | 3 (S1a, S1b, S1c) | 6 (AC reference) | Full end-to-end proof via console |
+| Slice 2 — Webapp | TBD | 5 | Web UI for attestation and verification |
+| Slice 3 — Polish | TBD | 4 | Demo-ready presentation view |
+| Release 2 | — | 7 | Workshop UX improvements |
 
 ## Success Criteria
 
