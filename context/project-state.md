@@ -6,7 +6,7 @@
 - **Last session:** 2026-03-14
 
 ## Last Session Summary
-S1a.1 specs V1-V4 reviewed by specialist agents and corrected (deploy script auth, Alloy features, e2e script bugs). Created S0.6 spec for HardTrust CLAUDE.md prerequisites. All specs synced to HardTrust.
+S0.6 (CLAUDE.md updates) and S0.7 (Solidity static analysis + pre-commit validation) implemented. S1a.1-V1 (registry contract) implemented with custom errors. Executing S1a.1 story handoffs sequentially.
 
 ## Current Product
 - **Name:** HardTrust
@@ -40,22 +40,24 @@ S1a.1 specs V1-V4 reviewed by specialist agents and corrected (deploy script aut
 
 ## Specs & Handoffs
 - `context/specs/INDEX.md` — Traceability index (stories ↔ specs ↔ handoffs)
-- `context/specs/` — 10 specs (S0.1-S0.5 implemented, S0.6 draft, S1a.1 V1-V4 review)
-- `context/handoff/` — 6 handoff files (S0.1-S0.5, S1a overview)
+- `context/specs/` — 11 specs (S0.1-S0.7 implemented, S1a.1 V1 implemented, V2-V4 review)
+- `context/handoff/` — 8 handoff files (S0.1-S0.7, S1a overview)
 
 ## HardTrust Repo State
 - Cargo workspace + Foundry project initialized
-- CI running (GitHub Actions: lint, test, integration stub, e2e stub)
-- CLAUDE.md with AI dev practices (context loading, operational rules, error handling)
+- CI running (GitHub Actions: lint, test, Solhint, integration stub, e2e stub)
+- CLAUDE.md with AI dev practices, build order, Anvil context, pre-commit validation
 - REVIEW.md with expanded review criteria
 - 6 seed ADRs in docs/adr/
 - Slice 1 stories in docs/stories/slice-1/
 - Architecture doc in docs/architecture.md
-- Specs S0.2-S0.5 in docs/specs/
+- Specs S0.2-S0.7 + S1a.1 V1-V4 in docs/specs/
+- HardTrustRegistry contract deployed (V1) with Solhint + Aderyn passing
+- Solhint + Aderyn configured for static analysis
 
 ## Open Questions
 - Resolved: smart contract (single contract), storage (hybrid), crypto (secp256k1)
 - Remaining open decisions deferred to feature specs (see architecture.md Section 10)
 
 ## Next Action
-Execute S0.6 handoff (CLAUDE.md updates), then S1a.1 V1 (registry contract) handoff.
+Execute S1a.1-V2 (device CLI) handoff, then V3 (attester CLI), then V4 (e2e validation).

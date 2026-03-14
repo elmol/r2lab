@@ -26,7 +26,7 @@ Orchestration handoff: [s1a-handoff](../handoff/s1a-handoff.md)
 
 | Spec | Name | Status | Handoff |
 |------|------|--------|---------|
-| V1 | [Registry Contract](s1a.1-v1-registry-contract.spec.md) | Review | Embedded |
+| V1 | [Registry Contract](s1a.1-v1-registry-contract.spec.md) | Implemented | Embedded |
 | V2 | [Device CLI](s1a.1-v2-device-cli.spec.md) | Review | Embedded |
 | V3 | [Attester CLI](s1a.1-v3-attester-cli.spec.md) | Review | Embedded |
 | V4 | [E2E Validation](s1a.1-v4-e2e-register.spec.md) | Review | Embedded |
