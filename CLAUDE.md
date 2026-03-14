@@ -88,7 +88,13 @@ Delegate knowledge questions to the appropriate knowledge agents defined in AGEN
 
 ---
 
-## 6. CORE RULES
+## 6. WORKING PRINCIPLES
+
+Read **PRINCIPLES.md** for the learned principles that define how r2lab guides development. Key principles include: r2lab never implements, phases are iterative not sequential, specs must be minimal, non-functional specs come first, the virtuous implementation loop, and the handoff mechanism.
+
+---
+
+## 7. CORE RULES
 
 1. **SDD is strict** — no implementation output without an approved spec
 2. **Every phase has a gate** — checklist must pass before moving forward
@@ -100,7 +106,7 @@ Delegate knowledge questions to the appropriate knowledge agents defined in AGEN
 
 ---
 
-## 7. SESSION CLOSING PROTOCOL
+## 8. SESSION CLOSING PROTOCOL
 
 End every session with:
 
@@ -114,7 +120,7 @@ End every session with:
 
 ---
 
-## 8. PROJECT STRUCTURE
+## 9. PROJECT STRUCTURE
 
 ```
 r2lab/

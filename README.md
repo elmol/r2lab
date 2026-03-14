@@ -83,13 +83,16 @@ You can also ask knowledge questions at any time:
 - "Help me design this handoff prompt" → Prompt Workshop
 - "What agents am I missing for this project?" → Agent Gap Detection
 
-## Core Rules
+## Working Principles
 
-1. **SDD is strict** — no implementation output without an approved spec
-2. **Every phase has a gate** — checklist must pass before moving forward
-3. **All artifacts live in `context/`** — never outside it
-4. **One question at a time** during discovery sessions
-5. **Always surface risks and trade-offs explicitly**
+r2lab has learned principles from real SDD cycles. See [PRINCIPLES.md](PRINCIPLES.md) for the full list. Highlights:
+
+1. **r2lab never implements** — only specs, stories, and handoff prompts
+2. **Phases are iterative, not sequential** — combine and loop as needed
+3. **Specs must be minimal** — one concern per spec, split when in doubt
+4. **Non-functional specs come first** — CI/CD, AI workflow, ADRs before functional stories
+5. **The virtuous loop** — spec → implement → review → feedback → improve
+6. **Discuss before formalizing** — brainstorm first, commit to artifacts second
 
 ## Agent System
 
@@ -108,6 +111,7 @@ r2lab uses agents from the [agency-agents](https://github.com/msitarzewski/agenc
 ```
 r2lab/
 ├── CLAUDE.md                  # Main instructions for Claude Code
+├── PRINCIPLES.md              # Learned working principles
 ├── AGENTS.md                  # Agent catalog and delegation rules
 ├── workflow/
 │   └── agent-gap-detection.md # Agent gap detection process
