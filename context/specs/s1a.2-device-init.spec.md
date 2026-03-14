@@ -7,7 +7,7 @@ Create the `device` binary with an `init` subcommand that prints a hardcoded dev
 ## Story Reference
 
 - **S1a** — Verify Device Data Origin (The Wire)
-- Covers S1.1 AC-1 partial (hardcoded serial + address)
+- Supports S1a AC-1 and AC-2 (device must have identity for verification to work)
 
 ## Related ADRs
 

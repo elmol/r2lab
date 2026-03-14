@@ -7,7 +7,7 @@ Create the `attester` binary with a `register` subcommand that registers a devic
 ## Story Reference
 
 - **S1a** — Verify Device Data Origin (The Wire)
-- Covers S1.3 AC-1 (happy path registration)
+- Supports S1a AC-1 (device must be registered for VERIFIED result)
 
 ## Related ADRs
 

@@ -29,19 +29,6 @@ Slice 1 is implemented as **horizontal sub-slices** — thin end-to-end passes t
 | **S1b** | TBD | Replace shortcuts — secp256k1, emulation, error handling, query |
 | **S1c** | TBD | Edge cases, integration tests, e2e automation |
 
-### Full-Scope Stories (AC reference)
-
-These define the complete acceptance criteria across all sub-slices. Each sub-slice covers a portion of these ACs incrementally.
-
-| Activity | Story | Description |
-|----------|-------|-------------|
-| A1: Initialize Device | **S1.1** | As a Device Owner, I run the init command on my RPi so that the device generates a unique identity tied to its hardware serial |
-| A2: Verify & Register | **S1.2** | As an Attester, I deploy the registry contract to a local chain with a pre-registered attester so that the system is ready to register devices |
-| A2: Verify & Register | **S1.3** | As an Attester, I register a device on-chain using the CLI so that the device is recognized as attested in the network |
-| A2: Verify & Register | **S1.4** | As anyone, I query a device's registration status via CLI so that I can check whether it is attested |
-| A3: Emit Signed Data | **S1.5** | As a Device Owner, I run the emit command so that my device produces a signed data reading stored locally |
-| A4: Verify Device & Data | **S1.6** | As anyone, I verify a signed data file against the on-chain registry so that I can distinguish data from attested vs unattested devices |
-
 _Note: The Device Owner shares serial + Ethereum address with the Attester manually (copy/paste, chat, in person). No tooling is built for this step in Slice 1._
 
 **Slice 1 gate:** The full flow (init, deploy, register, emit, verify) runs end-to-end from the command line. A registered device passes verification. An unregistered device fails verification.
@@ -151,12 +138,12 @@ Sub-slice stories, specs, and AC coverage in `context/stories/slice-1/README.md`
 
 ## Story Count
 
-| Slice | Sub-Slice Stories | Full-Scope Stories | Scope |
-|-------|-------------------|-------------------|-------|
-| Slice 1 — CLI | 3 (S1a, S1b, S1c) | 6 (AC reference) | Full end-to-end proof via console |
-| Slice 2 — Webapp | TBD | 5 | Web UI for attestation and verification |
-| Slice 3 — Polish | TBD | 4 | Demo-ready presentation view |
-| Release 2 | — | 7 | Workshop UX improvements |
+| Slice | Stories | Scope |
+|-------|---------|-------|
+| Slice 1 — CLI | 3 (S1a, S1b, S1c) | Full end-to-end proof via console |
+| Slice 2 — Webapp | 5 (will be sub-sliced when reached) | Web UI for attestation and verification |
+| Slice 3 — Polish | 4 (will be sub-sliced when reached) | Demo-ready presentation view |
+| Release 2 | 7 | Workshop UX improvements |
 
 ## Success Criteria
 

@@ -7,7 +7,7 @@ Add an `emit` subcommand to the `device` binary that writes a hardcoded data rea
 ## Story Reference
 
 - **S1a** — Verify Device Data Origin (The Wire)
-- Covers S1.5 AC-1 partial (hardcoded data, fake signature, real timestamp)
+- Supports S1a AC-1 and AC-2 (device must emit reading for verification to work)
 
 ## Related ADRs
 

@@ -7,7 +7,7 @@ Add a `verify` subcommand to the `attester` binary that checks whether a data re
 ## Story Reference
 
 - **S1a** — Verify Device Data Origin (The Wire)
-- Covers S1.6 AC-1 (VERIFIED) + AC-2 (UNVERIFIED)
+- Directly implements S1a AC-1 (VERIFIED) + AC-2 (UNVERIFIED)
 
 ## Related ADRs
 

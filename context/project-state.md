@@ -36,7 +36,7 @@ Restructured S1a: one user story (S1a — Verify Device Data Origin) + 6 small s
 - `context/architecture.md` — System architecture, components, data flow, crypto, CI/CD, dev workflow
 
 ## Stories Artifacts
-- `context/stories/slice-1/` — 6 refined user stories for Slice 1 (CLI end-to-end)
+- `context/stories/slice-1/` — Flat sub-slice stories (S1a defined, S1b/S1c TBD)
 
 ## Specs & Handoffs
 - `context/specs/INDEX.md` — Traceability index (stories ↔ specs ↔ handoffs)

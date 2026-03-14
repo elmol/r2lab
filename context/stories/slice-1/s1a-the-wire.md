@@ -33,20 +33,6 @@ This is the walking skeleton — the thinnest possible end-to-end pass. Everythi
 - Registration: happy path only (no duplicate check, no unauthorized check)
 - Verification: address match only (no signature verification)
 
-## Parent Stories
-
-This story covers partial ACs from the following Slice 1 stories:
-
-| Story | AC covered | What's hardcoded |
-|-------|------------|------------------|
-| S1.1 — Generate Device Identity | AC-1 partial | No crypto, fixed serial + address |
-| S1.2 — Deploy Contract + Seed Attester | AC-1, AC-2, AC-3 | Full coverage |
-| S1.3 — Register Device via CLI | AC-1 | Happy path only |
-| S1.5 — Emit Signed Reading | AC-1 partial | Hardcoded data, fake signature |
-| S1.6 — Verify Device Data | AC-1, AC-2 | Address check only, no signature verification |
-
-S1.4 (Query Device Status) is not covered — query is subsumed by verify in this slice.
-
 ## Related ADRs
 
 - ADR-0001: Monorepo flat structure
