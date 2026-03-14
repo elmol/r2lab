@@ -126,16 +126,21 @@ End every session with:
 r2lab/
 ├── CLAUDE.md
 ├── AGENTS.md
+├── PRINCIPLES.md              <- learned working principles
 ├── context/
-│   ├── project-state.md      <- created on first session
+│   ├── project-state.md       <- created on first session
 │   ├── discovery.md
-│   ├── story-map.md           <- replaces product-spec.md (Patton's Story Mapping)
+│   ├── story-map.md           <- Patton's Story Mapping
 │   ├── architecture.md
 │   ├── stories/
 │   │   └── slice-N/
-│   │       └── [story-id]-[name].md    <- refined user stories
-│   └── specs/
-│       └── [feature-name].spec.md      <- detailed feature specs (created at handoff)
+│   │       ├── README.md              <- sub-slice map
+│   │       └── [story-id]-[name].md   <- user stories (horizontal slices)
+│   ├── specs/
+│   │   ├── INDEX.md                   <- traceability (stories ↔ specs ↔ handoffs)
+│   │   └── [spec-id].spec.md         <- vertical specs (one concern each)
+│   └── handoff/
+│       └── [handoff-id]-handoff.md    <- handoff prompts for implementation
 └── .claude/
     └── agents/
         └── [agent files from agency-agents + custom]

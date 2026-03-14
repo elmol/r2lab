@@ -93,6 +93,7 @@ r2lab has learned principles from real SDD cycles. See [PRINCIPLES.md](PRINCIPLE
 4. **Non-functional specs come first** — CI/CD, AI workflow, ADRs before functional stories
 5. **The virtuous loop** — spec → implement → review → feedback → improve
 6. **Discuss before formalizing** — brainstorm first, commit to artifacts second
+7. **Horizontal stories, vertical specs** — stories cut across all layers (end-to-end value), specs are tiny per component
 
 ## Agent System
 

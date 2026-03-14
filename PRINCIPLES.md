@@ -103,14 +103,18 @@ Don't rush to close phases. Brainstorm back and forth before committing to artif
 
 ---
 
-## 9. Horizontal Slicing Over Vertical Stories
+## 9. Horizontal Stories, Vertical Specs
 
-User stories are vertical (one feature end-to-end). But implementation should be sliced **horizontally** — thin end-to-end passes through all layers. Each horizontal slice is a walking skeleton that gets thicker with each iteration.
+User stories are **horizontal** — each one cuts across all layers (device, contracts, attester) delivering thin end-to-end value. Stories are flat with no hierarchy. When sub-slicing, original stories are replaced by smaller horizontal stories, each owning its own acceptance criteria.
 
-- **Slice 1a:** Hardcode everything, prove the chain works (no real crypto, no error handling, fake data)
-- **Slice 1b:** Replace shortcuts with real behavior (real crypto, emulation mode, validation)
-- **Slice 1c:** Edge cases, CI integration, polish
+Specs are **vertical** — tiny, one concern each (one component, one capability). Multiple vertical specs implement a single horizontal story.
 
-This means specs are per **sub-slice**, not per story. A sub-slice touches multiple stories partially. The stories remain as reference for full acceptance criteria, but implementation is organized by horizontal layers.
+- **Horizontal stories:** S1a.1 (register + confirm), S1a.2 (VERIFIED), S1a.3 (UNVERIFIED)
+- **Vertical specs per story:** V1 (contract), V2 (device CLI), V3 (attester CLI), V4 (e2e validation)
+
+Sub-slices (1a, 1b, 1c) are horizontal passes of increasing depth:
+- **1a:** Hardcode everything, prove the chain works
+- **1b:** Real crypto, emulation, error handling
+- **1c:** Edge cases, CI, polish
 
 Avoid premature abstractions (e.g., don't create a `common/` crate in 1a when hardcoded values suffice). Let shared code emerge from actual duplication, not from anticipated need.

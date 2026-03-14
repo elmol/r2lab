@@ -48,4 +48,4 @@ V1 and V2 can run in parallel. V3 depends on V1. V4 depends on all.
 - **Setup specs (S0.x)** have no user story — infrastructure prerequisites
 - **Story specs (V1, V2...)** are tiny vertical specs implementing one concern each
 - **Status:** Draft → Review → Approved → Implemented
-- **Execution order:** S0.x → S1a.1 (V1→V2→V3→V4) → S1a.2 → S1a.3 → S1b → S1c
+- **Execution order:** S0.x → S1a.1 (V1+V2 parallel, then V3, then V4) → S1a.2 → S1a.3 → S1b → S1c
