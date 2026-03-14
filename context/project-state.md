@@ -6,7 +6,7 @@
 - **Last session:** 2026-03-14
 
 ## Last Session Summary
-Restructured S1a: one user story (S1a — Verify Device Data Origin) + 6 small specs (S1a.1-S1a.6) replacing the single large spec. Updated INDEX, README, handoff, and story map for coherence. Stories S1.1-S1.6 have sub-slice AC coverage tables. Ready to execute S1a specs in HardTrust.
+Restructured S1a into 3 horizontal user stories (S1a.1-S1a.3), each cutting across all layers and delivering end-to-end value. Flattened story structure — no parent/child hierarchy. Specs TBD per story before handoff. Ready to write specs for S1a.1.
 
 ## Current Product
 - **Name:** HardTrust
@@ -40,8 +40,8 @@ Restructured S1a: one user story (S1a — Verify Device Data Origin) + 6 small s
 
 ## Specs & Handoffs
 - `context/specs/INDEX.md` — Traceability index (stories ↔ specs ↔ handoffs)
-- `context/specs/` — 11 specs (S0.1-S0.5 implemented, S1a.1-S1a.6 draft)
-- `context/handoff/` — 6 handoff files (S0.1-S0.5, S1a overview — individual S1a specs have embedded handoffs)
+- `context/specs/` — 5 specs (S0.1-S0.5 implemented, S1a specs TBD)
+- `context/handoff/` — 6 handoff files (S0.1-S0.5, S1a overview)
 
 ## HardTrust Repo State
 - Cargo workspace + Foundry project initialized
@@ -58,4 +58,4 @@ Restructured S1a: one user story (S1a — Verify Device Data Origin) + 6 small s
 - Remaining open decisions deferred to feature specs (see architecture.md Section 10)
 
 ## Next Action
-Approve S1a specs (S1a.1-S1a.6), copy to HardTrust, and execute handoff prompts for first functional implementation.
+Write specs for S1a.1 (register device on-chain), approve, and execute handoff in HardTrust.

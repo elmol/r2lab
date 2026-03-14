@@ -14,35 +14,27 @@ Traceability map between user stories, specs, and handoff prompts.
 
 ## Slice 1 — CLI/Console
 
-Each sub-slice is a horizontal end-to-end pass with its own user story and specs.
-See [stories/slice-1/README.md](../stories/slice-1/README.md) for the sub-slice map.
-
 ### S1a — "The Wire" (hardcoded end-to-end)
 
-**Story:** [S1a — Verify Device Data Origin](../stories/slice-1/s1a-the-wire.md)
+| Story | Specs | Status |
+|-------|-------|--------|
+| [S1a.1 — Register device on-chain](../stories/slice-1/s1a.1-register-device-on-chain.md) | TBD | Draft |
+| [S1a.2 — Verify registered device](../stories/slice-1/s1a.2-verify-registered-device.md) | TBD | Draft |
+| [S1a.3 — Verify unregistered device](../stories/slice-1/s1a.3-verify-unregistered-device.md) | TBD | Draft |
 
 Orchestration handoff: [s1a-handoff](../handoff/s1a-handoff.md)
 
-| Spec ID | Name | Status | Handoff |
-|---------|------|--------|---------|
-| S1a.1 | [Registry Contract](s1a.1-registry-contract.spec.md) | Draft | Embedded |
-| S1a.2 | [Device Init](s1a.2-device-init.spec.md) | Draft | Embedded |
-| S1a.3 | [Device Emit](s1a.3-device-emit.spec.md) | Draft | Embedded |
-| S1a.4 | [Attester Register](s1a.4-attester-register.spec.md) | Draft | Embedded |
-| S1a.5 | [Attester Verify](s1a.5-attester-verify.spec.md) | Draft | Embedded |
-| S1a.6 | [Workspace + E2E](s1a.6-workspace-e2e.spec.md) | Draft | Embedded |
-
 ### S1b — "Real Crypto"
 
-**Story:** TBD | **Status:** Pending
+Stories and specs: TBD | **Status:** Pending
 
 ### S1c — "Polish & CI"
 
-**Story:** TBD | **Status:** Pending
+Stories and specs: TBD | **Status:** Pending
 
 ## Notes
 
 - **Setup specs (S0.x)** have no user story — infrastructure/process prerequisites
-- **Slice stories (S1a, S1b, S1c)** are flat, independent user stories — each sub-slice owns its ACs
+- **Each story** gets one or more small specs (CÓMO) when ready for implementation
 - **Status:** Draft → Review → Approved → Implemented
-- **Execution order:** S0.1 → S0.2 → S0.3 → S0.4 → S0.5 → S1a.1 → S1a.2 → S1a.3 → S1a.4 → S1a.5 → S1a.6 → S1b → S1c
+- **Execution order:** S0.1-S0.5 → S1a.1 → S1a.2 → S1a.3 → S1b → S1c

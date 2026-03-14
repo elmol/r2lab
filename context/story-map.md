@@ -19,15 +19,19 @@ A1: Initialize Device       A2: Verify & Register       A3: Emit Signed Data    
 
 **Demo:** A terminal session showing: device init, contract deployment, attester registration on-chain, signed data emission, and CLI-based verification that distinguishes a registered device from an unregistered one.
 
-### Sub-Slice Stories (what gets implemented)
+### S1a — "The Wire" (hardcoded end-to-end)
 
-Slice 1 is implemented as **horizontal sub-slices** — thin end-to-end passes through all layers. Each sub-slice has its own user story and specs. See [stories/slice-1/README.md](stories/slice-1/README.md) for specs and AC coverage.
+Each story is a horizontal slice across all layers (device, contracts, attester). See [stories/slice-1/README.md](stories/slice-1/README.md).
 
-| Sub-Slice | Story | Goal |
-|-----------|-------|------|
-| **S1a** | As anyone, I can verify whether a data reading comes from a registered device so that I can distinguish trusted from untrusted sources | Hardcoded end-to-end — prove the chain works, no crypto |
-| **S1b** | TBD | Replace shortcuts — secp256k1, emulation, error handling, query |
-| **S1c** | TBD | Edge cases, integration tests, e2e automation |
+| Story | Description |
+|-------|-------------|
+| **S1a.1** | As an Attester, I register a device on a local chain and confirm its registration |
+| **S1a.2** | As anyone, I verify that a data reading comes from a registered device → VERIFIED |
+| **S1a.3** | As anyone, I see that data from an unregistered device is UNVERIFIED |
+
+### S1b — "Real Crypto" / S1c — "Polish & CI"
+
+Stories TBD — will be defined when the previous sub-slice is complete.
 
 _Note: The Device Owner shares serial + Ethereum address with the Attester manually (copy/paste, chat, in person). No tooling is built for this step in Slice 1._
 

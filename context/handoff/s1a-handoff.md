@@ -2,7 +2,7 @@
 
 ## Structure
 
-S1a is implemented through 6 small specs, each with its own embedded handoff prompt. Execute them in order.
+S1a has 3 horizontal user stories, each delivering end-to-end value. Specs for each story will be created before handoff to implementation.
 
 ## Pre-requisites
 
@@ -11,25 +11,16 @@ S1a is implemented through 6 small specs, each with its own embedded handoff pro
 
 ## Execution Order
 
-| Step | Spec | Handoff |
-|------|------|---------|
-| 1 | [S1a.1 — Registry Contract](../specs/s1a.1-registry-contract.spec.md) | Copy spec to HardTrust, execute embedded prompt |
-| 2 | [S1a.2 — Device Init](../specs/s1a.2-device-init.spec.md) | Copy spec to HardTrust, execute embedded prompt |
-| 3 | [S1a.3 — Device Emit](../specs/s1a.3-device-emit.spec.md) | Copy spec to HardTrust, execute embedded prompt |
-| 4 | [S1a.4 — Attester Register](../specs/s1a.4-attester-register.spec.md) | Copy spec to HardTrust, execute embedded prompt |
-| 5 | [S1a.5 — Attester Verify](../specs/s1a.5-attester-verify.spec.md) | Copy spec to HardTrust, execute embedded prompt |
-| 6 | [S1a.6 — Workspace + E2E](../specs/s1a.6-workspace-e2e.spec.md) | Copy spec to HardTrust, execute embedded prompt |
+| Step | Story | Delivers |
+|------|-------|----------|
+| 1 | S1a.1 — Register device on-chain | Device identity exists in the registry |
+| 2 | S1a.2 — Verify registered device | VERIFIED — trust confirmed |
+| 3 | S1a.3 — Verify unregistered device | UNVERIFIED — contrast proven, Wire gate met |
 
-## After each spec
+## After all stories
 
-1. Verify the spec's validation section passes
-2. `just test` still passes (no regressions)
-
-## After all specs
-
-1. Run the full end-to-end validation from S1a.6
-2. Verify VERIFIED for registered device, UNVERIFIED for unregistered
-3. `just ci` passes
-4. Review the PR
-5. Merge
-6. Return to r2lab with feedback
+1. Full end-to-end in one terminal: init → deploy → register → emit → verify (VERIFIED + UNVERIFIED)
+2. `just build` and `just test` pass
+3. Review the PR
+4. Merge
+5. Return to r2lab with feedback
