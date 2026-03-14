@@ -22,11 +22,11 @@ The primary use case context is educational/DIY: workshops, schools, universitie
 
 **Device** — A Raspberry Pi with a generated identity consisting of:
 - Hardware serial number (read from `/sys/firmware/devicetree/base/serial-number`, immutable, unique per device)
-- ed25519 key pair (generated on initialization, public key is the on-chain identity)
+- secp256k1 key pair (generated on initialization, derived Ethereum address is the on-chain identity) [^1]
 
 ## End-to-End Flow
 
-1. **Initialize** — RPi runs an initialization script that generates an ed25519 key pair and displays serial + public key in the console (plain text)
+1. **Initialize** — RPi runs an initialization script that generates a secp256k1 key pair and displays serial + Ethereum address in the console (plain text) [^1]
 2. **Request registration** — Device Owner shares serial + public key with the Attester (copy/paste from console)
 3. **Attest** — Attester enters the portal (authenticated with their wallet), inputs the device data, visually confirms the hardware is real and the serial matches, and signs the attestation transaction on-chain
 4. **Emit data** — Registered RPi emits signed data (CPU temperature + timestamp as the minimal viable data point)
@@ -66,3 +66,7 @@ Simple and explicit:
 - Smart contract architecture: single registry contract or modular?
 - Portal stack (to be decided in Architecture phase)
 - Data emission frequency and storage strategy
+
+---
+
+[^1]: Originally proposed as ed25519. Changed to secp256k1/ECDSA during Architecture (Phase 3) for EVM compatibility — allows on-chain signature verification via `ecrecover`. See ADR-0002 and architecture.md Section 6.1.

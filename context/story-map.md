@@ -191,6 +191,23 @@ Stories that improve the workshop experience and system robustness but are not r
 
 ---
 
+## Slice 1 — Renumbering Note
+
+During story refinement (Phase 4), Slice 1 stories were renumbered to reflect implementable units:
+
+| Story Map (original) | Refined Story | Change |
+|----------------------|---------------|--------|
+| S1.1 Generate device identity | S1.1 Generate device identity | Unchanged |
+| S1.2 Share identity (manual) | — | Dropped (manual step, no code) |
+| S1.3 Register device on-chain | S1.3 Register device via CLI | Unchanged |
+| S1.4 Emit signed reading | S1.5 Emit signed reading | Renumbered |
+| S1.5 Verify attested device | S1.6 Verify device data | Merged S1.5+S1.6 into one |
+| S1.6 Verify unregistered device | (included in S1.6) | Merged into S1.6 |
+| — | S1.2 Deploy contract + seed attester | Added (technical prerequisite) |
+| — | S1.4 Query device status | Added (separated from verify) |
+
+Refined stories live in `context/stories/slice-1/`. The story map above preserves the original narrative.
+
 ## Implementation Sequence
 
 ```

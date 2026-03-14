@@ -9,8 +9,8 @@ Traceability map between user stories, specs, and handoff prompts.
 | S0.1 | [Repo Initialization](s0.1-repo-initialization.spec.md) | — | Implemented | [s0.1-handoff](../handoff/s0.1-handoff.md) |
 | S0.2 | [CI Pipeline](s0.2-ci-pipeline.spec.md) | — | Implemented | [s0.2-handoff](../handoff/s0.2-handoff.md) |
 | S0.3 | [AI Workflow Setup](s0.3-ai-workflow-setup.spec.md) | — | Implemented | [s0.3-handoff](../handoff/s0.3-handoff.md) |
-| S0.4 | [Seed ADRs](s0.4-seed-adrs.spec.md) | — | Approved | [s0.4-handoff](../handoff/s0.4-handoff.md) |
-| S0.5 | [AI Dev Practices](s0.5-ai-dev-practices.spec.md) | — | Draft | [s0.5-handoff](../handoff/s0.5-handoff.md) |
+| S0.4 | [Seed ADRs](s0.4-seed-adrs.spec.md) | — | Implemented | [s0.4-handoff](../handoff/s0.4-handoff.md) |
+| S0.5 | [AI Dev Practices](s0.5-ai-dev-practices.spec.md) | — | Implemented | [s0.5-handoff](../handoff/s0.5-handoff.md) |
 
 ## Slice 1 — CLI End-to-End
 
@@ -29,4 +29,4 @@ Traceability map between user stories, specs, and handoff prompts.
 - **Functional specs (S1.x+)** map 1:1 to refined user stories, but a story may produce multiple specs if needed
 - **Status:** Draft → Review → Approved → Implemented
 - **Handoff:** link to the prompt document in `context/handoff/`
-- **Execution order:** S0.1 → S0.2 → S0.3 → S0.4 → S1.1 → ...
+- **Execution order:** S0.1 → S0.2 → S0.3 → S0.4 → S0.5 → S1.1 → ...
