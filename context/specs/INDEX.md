@@ -16,25 +16,36 @@ Traceability map between user stories, specs, and handoff prompts.
 
 ### S1a — "The Wire" (hardcoded end-to-end)
 
-| Story | Specs | Status |
-|-------|-------|--------|
-| [S1a.1 — Register device on-chain](../stories/slice-1/s1a.1-register-device-on-chain.md) | TBD | Draft |
-| [S1a.2 — Verify registered device](../stories/slice-1/s1a.2-verify-registered-device.md) | TBD | Draft |
-| [S1a.3 — Verify unregistered device](../stories/slice-1/s1a.3-verify-unregistered-device.md) | TBD | Draft |
-
 Orchestration handoff: [s1a-handoff](../handoff/s1a-handoff.md)
 
-### S1b — "Real Crypto"
+#### S1a.1 — Register device on-chain
 
-Stories and specs: TBD | **Status:** Pending
+**Story:** [S1a.1](../stories/slice-1/s1a.1-register-device-on-chain.md)
 
-### S1c — "Polish & CI"
+| Spec | Name | Status | Handoff |
+|------|------|--------|---------|
+| V1 | [Registry Contract](s1a.1-v1-registry-contract.spec.md) | Draft | Embedded |
+| V2 | [Device CLI](s1a.1-v2-device-cli.spec.md) | Draft | Embedded |
+| V3 | [Attester CLI](s1a.1-v3-attester-cli.spec.md) | Draft | Embedded |
+| V4 | [E2E Validation](s1a.1-v4-e2e-register.spec.md) | Draft | Embedded |
 
-Stories and specs: TBD | **Status:** Pending
+V1 and V2 can run in parallel. V3 depends on V1. V4 depends on all.
+
+#### S1a.2 — Verify registered device
+
+**Story:** [S1a.2](../stories/slice-1/s1a.2-verify-registered-device.md) | Specs: TBD
+
+#### S1a.3 — Verify unregistered device
+
+**Story:** [S1a.3](../stories/slice-1/s1a.3-verify-unregistered-device.md) | Specs: TBD
+
+### S1b — "Real Crypto" | Pending
+
+### S1c — "Polish & CI" | Pending
 
 ## Notes
 
-- **Setup specs (S0.x)** have no user story — infrastructure/process prerequisites
-- **Each story** gets one or more small specs (CÓMO) when ready for implementation
+- **Setup specs (S0.x)** have no user story — infrastructure prerequisites
+- **Story specs (V1, V2...)** are tiny vertical specs implementing one concern each
 - **Status:** Draft → Review → Approved → Implemented
-- **Execution order:** S0.1-S0.5 → S1a.1 → S1a.2 → S1a.3 → S1b → S1c
+- **Execution order:** S0.x → S1a.1 (V1→V2→V3→V4) → S1a.2 → S1a.3 → S1b → S1c

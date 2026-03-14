@@ -6,7 +6,7 @@
 - **Last session:** 2026-03-14
 
 ## Last Session Summary
-Restructured S1a into 3 horizontal user stories (S1a.1-S1a.3), each cutting across all layers and delivering end-to-end value. Flattened story structure — no parent/child hierarchy. Specs TBD per story before handoff. Ready to write specs for S1a.1.
+S1a has 3 horizontal stories (S1a.1-S1a.3). S1a.1 has 4 tiny vertical specs (V1-V4): registry contract, device CLI, attester CLI, e2e validation. Ready to execute handoff for S1a.1-V1.
 
 ## Current Product
 - **Name:** HardTrust
@@ -40,7 +40,7 @@ Restructured S1a into 3 horizontal user stories (S1a.1-S1a.3), each cutting acro
 
 ## Specs & Handoffs
 - `context/specs/INDEX.md` — Traceability index (stories ↔ specs ↔ handoffs)
-- `context/specs/` — 5 specs (S0.1-S0.5 implemented, S1a specs TBD)
+- `context/specs/` — 9 specs (S0.1-S0.5 implemented, S1a.1 V1-V4 draft)
 - `context/handoff/` — 6 handoff files (S0.1-S0.5, S1a overview)
 
 ## HardTrust Repo State
@@ -58,4 +58,4 @@ Restructured S1a into 3 horizontal user stories (S1a.1-S1a.3), each cutting acro
 - Remaining open decisions deferred to feature specs (see architecture.md Section 10)
 
 ## Next Action
-Write specs for S1a.1 (register device on-chain), approve, and execute handoff in HardTrust.
+Approve S1a.1 specs, copy to HardTrust, execute V1 (registry contract) handoff.
