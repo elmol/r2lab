@@ -1,31 +1,27 @@
 # Slice 1 — Horizontal Sub-Slices
 
-Slice 1 stories (S1.1-S1.6) define the full acceptance criteria vertically (one feature each). Implementation is sliced **horizontally** — thin end-to-end passes through all layers.
+Slice 1 stories (S1.1-S1.6) define the full acceptance criteria vertically (one feature each). Implementation is sliced **horizontally** — thin end-to-end passes through all layers. Each sub-slice has its own user story and small specs.
 
 ## Sub-Slice Map
 
 ### Slice 1a — "The Wire"
 
+**Story:** [S1a — Verify Device Data Origin](s1a-the-wire.md)
+
 **Goal:** Thinnest possible end-to-end pass. Hardcode everything, prove the chain works.
 
-| Layer | What | Shortcuts |
-|-------|------|-----------|
-| contracts/ | Minimal registry: `registerDevice(bytes32, address)` + `getDevice(bytes32)` + attester seed in constructor | No events, no dynamic attester management |
-| device/ | `device init` prints hardcoded serial + address. `device emit` writes JSON with hardcoded data + fake signature | No crypto, no real serial, no keypair |
-| attester/ | `attester register --serial X --address Y` submits tx. `attester verify --file path` checks address on-chain → VERIFIED/UNVERIFIED | No signature verification, only on-chain registration check |
+**Specs:**
 
-**No `common/` crate.** No secp256k1. No emulation mode. No error handling.
+| Spec | Scope |
+|------|-------|
+| [S1a.1](../../specs/s1a.1-registry-contract.spec.md) | Registry contract + deploy + tests |
+| [S1a.2](../../specs/s1a.2-device-init.spec.md) | Device init — hardcoded serial + address |
+| [S1a.3](../../specs/s1a.3-device-emit.spec.md) | Device emit — hardcoded reading JSON |
+| [S1a.4](../../specs/s1a.4-attester-register.spec.md) | Attester register — on-chain registration |
+| [S1a.5](../../specs/s1a.5-attester-verify.spec.md) | Attester verify — VERIFIED / UNVERIFIED |
+| [S1a.6](../../specs/s1a.6-workspace-e2e.spec.md) | Workspace config + justfile + e2e validation |
 
-**End-to-end flow:**
-```
-device init          → prints "Serial: HARDCODED-001, Address: 0xHARDCODED"
-forge script deploy  → contract on Anvil with attester seeded
-attester register    → registers device on-chain
-device emit          → writes reading.json with fake data
-attester verify      → reads JSON, checks address on-chain → VERIFIED / UNVERIFIED
-```
-
-**Story AC coverage:**
+**Parent story AC coverage:**
 
 | Story | Covered in 1a | Deferred |
 |-------|---------------|----------|
@@ -33,7 +29,7 @@ attester verify      → reads JSON, checks address on-chain → VERIFIED / UNVE
 | S1.2 | AC-1, AC-2, AC-3 | Edge cases |
 | S1.3 | AC-1 (happy path) | AC-2, AC-3, edge cases |
 | S1.4 | — | All (query subsumed by verify in 1a) |
-| S1.5 | Partial AC-1 (hardcoded data, fake signature) | AC-2, AC-3, edge cases |
+| S1.5 | Partial AC-1 (hardcoded data, fake signature, real timestamp) | AC-2, AC-3, edge cases |
 | S1.6 | AC-1 (VERIFIED), AC-2 (UNVERIFIED) | AC-3 (INVALID), edge cases |
 
 **Exit gate:** VERIFIED for registered device, UNVERIFIED for unregistered. Full chain in terminal.
@@ -41,6 +37,8 @@ attester verify      → reads JSON, checks address on-chain → VERIFIED / UNVE
 ---
 
 ### Slice 1b — "Real Crypto"
+
+**Story:** TBD
 
 **Goal:** Replace all hardcoded values with real behavior. Introduce secp256k1 crypto.
 
@@ -55,11 +53,13 @@ attester verify      → reads JSON, checks address on-chain → VERIFIED / UNVE
 - Error handling: duplicate registration, unauthorized caller, tampered data (INVALID)
 - Events in contract
 
-**Story AC coverage:** All primary ACs for S1.1-S1.6.
+**Parent story AC coverage:** All primary ACs for S1.1-S1.6.
 
 ---
 
 ### Slice 1c — "Polish & CI"
+
+**Story:** TBD
 
 **Goal:** Edge cases, CI integration, e2e automation.
 
@@ -69,13 +69,19 @@ attester verify      → reads JSON, checks address on-chain → VERIFIED / UNVE
 - CI pipeline: activate integration and e2e jobs
 - Full demo walkthrough script
 
-**Story AC coverage:** All edge cases. Full Definition of Done for all stories.
+**Parent story AC coverage:** All edge cases. Full Definition of Done for all stories.
 
 **Exit gate:** Slice 1 gate from story map is met.
 
 ---
 
-## Stories (Full Acceptance Criteria)
+## Stories
+
+### Sub-Slice Stories
+
+- [S1a — Verify Device Data Origin (The Wire)](s1a-the-wire.md)
+
+### Full-Scope Stories (Acceptance Criteria)
 
 - [S1.1 — Generate Device Identity](s1.1-generate-device-identity.md)
 - [S1.2 — Deploy Contract + Seed Attester](s1.2-deploy-contract.md)

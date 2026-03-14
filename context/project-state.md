@@ -1,12 +1,12 @@
 # Project State
 
 ## Status
-- **Phase:** 4/5 — Feature Specs + Implementation Handoff (running iteratively)
+- **Phase:** 4/5/6 — Feature Specs + Implementation Handoff + Review (running iteratively)
 - **Started:** 2026-03-12
 - **Last session:** 2026-03-14
 
 ## Last Session Summary
-Created infrastructure specs (S0.1-S0.5) and implemented them in HardTrust repo. Set up CI/CD, AI workflow rules, seed ADRs, and AI dev practices. Ran Phase 6 review with Reality Checker — result: CONDITIONALLY READY. Fixed critical and major findings. S1.1 spec drafted, ready for handoff.
+Restructured S1a: one user story (S1a — Verify Device Data Origin) + 6 small specs (S1a.1-S1a.6) replacing the single large spec. Updated INDEX, README, handoff, and story map for coherence. Stories S1.1-S1.6 have sub-slice AC coverage tables. Ready to execute S1a specs in HardTrust.
 
 ## Current Product
 - **Name:** HardTrust
@@ -40,8 +40,8 @@ Created infrastructure specs (S0.1-S0.5) and implemented them in HardTrust repo.
 
 ## Specs & Handoffs
 - `context/specs/INDEX.md` — Traceability index (stories ↔ specs ↔ handoffs)
-- `context/specs/` — 6 specs (S0.1-S0.5 implemented, S1.1 draft)
-- `context/handoff/` — 5 handoff prompts (S0.1-S0.5)
+- `context/specs/` — 11 specs (S0.1-S0.5 implemented, S1a.1-S1a.6 draft)
+- `context/handoff/` — 6 handoff files (S0.1-S0.5, S1a overview — individual S1a specs have embedded handoffs)
 
 ## HardTrust Repo State
 - Cargo workspace + Foundry project initialized
@@ -58,4 +58,4 @@ Created infrastructure specs (S0.1-S0.5) and implemented them in HardTrust repo.
 - Remaining open decisions deferred to feature specs (see architecture.md Section 10)
 
 ## Next Action
-Create S1.1 handoff file, copy spec to HardTrust, and begin first functional implementation.
+Approve S1a specs (S1a.1-S1a.6), copy to HardTrust, and execute handoff prompts for first functional implementation.

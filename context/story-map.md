@@ -19,31 +19,26 @@ A1: Initialize Device       A2: Verify & Register       A3: Emit Signed Data    
 
 **Demo:** A terminal session showing: device init, contract deployment, attester registration on-chain, signed data emission, and CLI-based verification that distinguishes a registered device from an unregistered one.
 
-### A1: Initialize Device
+### Implementation Sub-Slices
 
-**S1.1 — Generate device identity**
-As a Device Owner, I run the init command on my RPi so that the device generates a unique identity tied to its hardware serial.
+Slice 1 is implemented as **horizontal sub-slices** (thin end-to-end passes through all layers), not vertically per story. Each sub-slice touches multiple stories incrementally. See [stories/slice-1/README.md](stories/slice-1/README.md) for the full AC coverage map.
 
-### A2: Verify & Register
+| Sub-Slice | Name | Goal |
+|-----------|------|------|
+| **1a** | The Wire | Hardcoded end-to-end — prove the chain works, no crypto |
+| **1b** | Real Crypto | Replace shortcuts — secp256k1, emulation, error handling, query |
+| **1c** | Polish & CI | Edge cases, integration tests, e2e automation |
 
-**S1.2 — Deploy contract and seed attester**
-As a developer, I deploy the registry contract to a local chain with a pre-registered attester so that the system is ready to register devices.
+### Stories
 
-**S1.3 — Register device on-chain via CLI**
-As an Attester, I register a device on-chain using the CLI so that the device is recognized as attested in the network.
-
-**S1.4 — Query device status**
-As anyone, I query a device's registration status via CLI so that I can check whether it is attested.
-
-### A3: Emit Signed Data
-
-**S1.5 — Emit a signed reading**
-As a Device Owner, I run the emit command so that my device produces a signed data reading stored locally.
-
-### A4: Verify Device & Data
-
-**S1.6 — Verify device data**
-As anyone, I verify a signed data file against the on-chain registry so that I can distinguish data from attested vs unattested devices.
+| Activity | Story | Description |
+|----------|-------|-------------|
+| A1: Initialize Device | **S1.1** | As a Device Owner, I run the init command on my RPi so that the device generates a unique identity tied to its hardware serial |
+| A2: Verify & Register | **S1.2** | As a developer, I deploy the registry contract to a local chain with a pre-registered attester so that the system is ready to register devices |
+| A2: Verify & Register | **S1.3** | As an Attester, I register a device on-chain using the CLI so that the device is recognized as attested in the network |
+| A2: Verify & Register | **S1.4** | As anyone, I query a device's registration status via CLI so that I can check whether it is attested |
+| A3: Emit Signed Data | **S1.5** | As a Device Owner, I run the emit command so that my device produces a signed data reading stored locally |
+| A4: Verify Device & Data | **S1.6** | As anyone, I verify a signed data file against the on-chain registry so that I can distinguish data from attested vs unattested devices |
 
 _Note: The Device Owner shares serial + Ethereum address with the Attester manually (copy/paste, chat, in person). No tooling is built for this step in Slice 1._
 

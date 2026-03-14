@@ -19,9 +19,18 @@ See [stories/slice-1/README.md](../stories/slice-1/README.md) for the sub-slice 
 
 ### Slice 1a — "The Wire" (hardcoded end-to-end)
 
-| Spec ID | Name | Stories Touched | Status | Handoff |
-|---------|------|-----------------|--------|---------|
-| S1a | — | S1.1*, S1.2, S1.3*, S1.5*, S1.6* | Pending | — |
+**Story:** [S1a — Verify Device Data Origin](../stories/slice-1/s1a-the-wire.md)
+
+Orchestration handoff: [s1a-handoff](../handoff/s1a-handoff.md)
+
+| Spec ID | Name | Status | Handoff |
+|---------|------|--------|---------|
+| S1a.1 | [Registry Contract](s1a.1-registry-contract.spec.md) | Draft | Embedded |
+| S1a.2 | [Device Init](s1a.2-device-init.spec.md) | Draft | Embedded |
+| S1a.3 | [Device Emit](s1a.3-device-emit.spec.md) | Draft | Embedded |
+| S1a.4 | [Attester Register](s1a.4-attester-register.spec.md) | Draft | Embedded |
+| S1a.5 | [Attester Verify](s1a.5-attester-verify.spec.md) | Draft | Embedded |
+| S1a.6 | [Workspace + E2E](s1a.6-workspace-e2e.spec.md) | Draft | Embedded |
 
 ### Slice 1b — "Real Crypto" (real behavior)
 
@@ -35,9 +44,9 @@ See [stories/slice-1/README.md](../stories/slice-1/README.md) for the sub-slice 
 |---------|------|-----------------|--------|---------|
 | S1c | — | All S1.x edge cases + CI | Pending | — |
 
-_* = partial coverage (hardcoded values, no real crypto)_
-
 ## User Stories Reference
+
+### Slice 1 (Full Scope)
 
 | Story | Name | File |
 |-------|------|------|
@@ -48,10 +57,16 @@ _* = partial coverage (hardcoded values, no real crypto)_
 | S1.5 | Emit Signed Reading | [s1.5-emit-signed-reading.md](../stories/slice-1/s1.5-emit-signed-reading.md) |
 | S1.6 | Verify Device Data | [s1.6-verify-device-data.md](../stories/slice-1/s1.6-verify-device-data.md) |
 
+### Slice 1a (Walking Skeleton)
+
+| Story | Name | File |
+|-------|------|------|
+| S1a | Verify Device Data Origin (The Wire) | [s1a-the-wire.md](../stories/slice-1/s1a-the-wire.md) |
+
 ## Notes
 
 - **Setup specs (S0.x)** have no user story — infrastructure/process prerequisites
-- **Functional specs (S1a, S1b, S1c)** are horizontal sub-slices that touch multiple stories
-- **User stories** define full acceptance criteria; sub-slices cover them incrementally
+- **Slice stories (S1a, S1b, S1c)** are horizontal sub-slices, each with its own user story
+- **Full-scope stories (S1.1-S1.6)** define complete acceptance criteria; sub-slices cover them incrementally
 - **Status:** Draft → Review → Approved → Implemented
-- **Execution order:** S0.1 → S0.2 → S0.3 → S0.4 → S0.5 → S1a → S1b → S1c
+- **Execution order:** S0.1 → S0.2 → S0.3 → S0.4 → S0.5 → S1a.1 → S1a.2 → S1a.3 → S1a.4 → S1a.5 → S1a.6 → S1b → S1c
