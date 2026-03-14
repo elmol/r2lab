@@ -118,8 +118,11 @@ r2lab/
 │   ├── architecture.md
 │   ├── stories/               # Refined user stories per slice
 │   │   └── slice-1/
-│   └── specs/                 # Detailed feature specs (created at handoff)
-│       └── [feature-name].spec.md
+│   ├── specs/                 # Detailed feature specs
+│   │   ├── INDEX.md           # Traceability: stories ↔ specs ↔ handoffs
+│   │   └── [spec-id].spec.md
+│   └── handoff/               # Implementation prompts for Claude Code
+│       └── [spec-id]-handoff.md
 └── .claude/
     └── agents/                # Agent definitions
         ├── prompt-workshop.md # Custom: prompt design and diagnosis
