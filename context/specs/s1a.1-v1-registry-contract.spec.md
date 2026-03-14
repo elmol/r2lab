@@ -27,16 +27,21 @@ A minimal Solidity contract that lets an authorized attester register a device a
 
 ### `contracts/script/Deploy.s.sol`
 
-- Foundry deploy script
-- Deployer: Anvil account #0 (`0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266`)
-- Attester: Anvil account #1 (`0x70997970C51812dc3A010C7d01b50e0d17dc79C8`)
-- Prints deployed contract address
+- Foundry deploy script using `vm.startBroadcast()` with Anvil account #0 private key (`0xac0974bec39a17e36ba4a6b4d238ff944bacb478cbed5efcae784d7bf4f2ff80`)
+- Deploys HardTrustRegistry with Anvil account #1 as attester (`0x70997970C51812dc3A010C7d01b50e0d17dc79C8`)
+- **Print the deployed address with `console.log("DEPLOYED:", address(registry))`** — this is used by the e2e script to extract the address
+
+### Output files
+
+- `contracts/src/HardTrustRegistry.sol`
+- `contracts/test/HardTrustRegistry.t.sol`
+- `contracts/script/Deploy.s.sol`
 
 ## What NOT to Build
 
 - No Rust code
-- No events, no duplicate check
-- No dynamic attester management
+- No events, no duplicate check (intentional for walking skeleton — added in S1b)
+- No dynamic attester management (addAttester/removeAttester)
 
 ## Validation
 
@@ -44,6 +49,7 @@ A minimal Solidity contract that lets an authorized attester register a device a
 cd contracts && forge build && forge test -vvv
 anvil &
 forge script script/Deploy.s.sol --rpc-url http://127.0.0.1:8545 --broadcast
+# Should print: DEPLOYED: 0x<contract-address>
 ```
 
 ## Handoff Prompt
@@ -52,7 +58,16 @@ forge script script/Deploy.s.sol --rpc-url http://127.0.0.1:8545 --broadcast
 Implement the HardTrustRegistry smart contract for HardTrust.
 
 Read the spec at docs/specs/s1a.1-v1-registry-contract.spec.md first.
-The contract goes in the existing contracts/ Foundry project.
 
+Output files:
+- contracts/src/HardTrustRegistry.sol
+- contracts/test/HardTrustRegistry.t.sol
+- contracts/script/Deploy.s.sol
+
+The deploy script must use console.log("DEPLOYED:", address(registry)) to print the
+contract address — the e2e script depends on this format.
+
+Respect the "What NOT to Build" section strictly — do not add anything beyond what is specified.
 After implementation, run `forge build && forge test -vvv` to validate.
+Branch: feat/s1a.1-register-device
 ```

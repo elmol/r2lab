@@ -6,7 +6,7 @@
 - **Last session:** 2026-03-14
 
 ## Last Session Summary
-S1a has 3 horizontal stories (S1a.1-S1a.3). S1a.1 has 4 tiny vertical specs (V1-V4): registry contract, device CLI, attester CLI, e2e validation. Ready to execute handoff for S1a.1-V1.
+S1a.1 specs V1-V4 reviewed by specialist agents and corrected (deploy script auth, Alloy features, e2e script bugs). Created S0.6 spec for HardTrust CLAUDE.md prerequisites. All specs synced to HardTrust.
 
 ## Current Product
 - **Name:** HardTrust
@@ -40,7 +40,7 @@ S1a has 3 horizontal stories (S1a.1-S1a.3). S1a.1 has 4 tiny vertical specs (V1-
 
 ## Specs & Handoffs
 - `context/specs/INDEX.md` — Traceability index (stories ↔ specs ↔ handoffs)
-- `context/specs/` — 9 specs (S0.1-S0.5 implemented, S1a.1 V1-V4 draft)
+- `context/specs/` — 10 specs (S0.1-S0.5 implemented, S0.6 draft, S1a.1 V1-V4 review)
 - `context/handoff/` — 6 handoff files (S0.1-S0.5, S1a overview)
 
 ## HardTrust Repo State
@@ -58,4 +58,4 @@ S1a has 3 horizontal stories (S1a.1-S1a.3). S1a.1 has 4 tiny vertical specs (V1-
 - Remaining open decisions deferred to feature specs (see architecture.md Section 10)
 
 ## Next Action
-Approve S1a.1 specs, copy to HardTrust, execute V1 (registry contract) handoff.
+Execute S0.6 handoff (CLAUDE.md updates), then S1a.1 V1 (registry contract) handoff.

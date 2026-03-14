@@ -11,6 +11,7 @@ Traceability map between user stories, specs, and handoff prompts.
 | S0.3 | [AI Workflow Setup](s0.3-ai-workflow-setup.spec.md) | — | Implemented | [s0.3-handoff](../handoff/s0.3-handoff.md) |
 | S0.4 | [Seed ADRs](s0.4-seed-adrs.spec.md) | — | Implemented | [s0.4-handoff](../handoff/s0.4-handoff.md) |
 | S0.5 | [AI Dev Practices](s0.5-ai-dev-practices.spec.md) | — | Implemented | [s0.5-handoff](../handoff/s0.5-handoff.md) |
+| S0.6 | [CLAUDE.md Updates](s0.6-hardtrust-claude-md-updates.spec.md) | — | Draft | Embedded |
 
 ## Slice 1 — CLI/Console
 
@@ -24,10 +25,10 @@ Orchestration handoff: [s1a-handoff](../handoff/s1a-handoff.md)
 
 | Spec | Name | Status | Handoff |
 |------|------|--------|---------|
-| V1 | [Registry Contract](s1a.1-v1-registry-contract.spec.md) | Draft | Embedded |
-| V2 | [Device CLI](s1a.1-v2-device-cli.spec.md) | Draft | Embedded |
-| V3 | [Attester CLI](s1a.1-v3-attester-cli.spec.md) | Draft | Embedded |
-| V4 | [E2E Validation](s1a.1-v4-e2e-register.spec.md) | Draft | Embedded |
+| V1 | [Registry Contract](s1a.1-v1-registry-contract.spec.md) | Review | Embedded |
+| V2 | [Device CLI](s1a.1-v2-device-cli.spec.md) | Review | Embedded |
+| V3 | [Attester CLI](s1a.1-v3-attester-cli.spec.md) | Review | Embedded |
+| V4 | [E2E Validation](s1a.1-v4-e2e-register.spec.md) | Review | Embedded |
 
 V1 and V2 can run in parallel. V3 depends on V1. V4 depends on all.
 

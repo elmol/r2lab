@@ -24,7 +24,12 @@ A Rust binary in `device/` with a single `init` subcommand that prints a hardcod
 
 ### Test
 
-- One unit test confirming `init` output contains expected serial and address
+- Test via `std::process::Command` capturing stdout: assert output contains expected serial and address strings
+
+### Output files
+
+- `device/Cargo.toml`
+- `device/src/main.rs`
 
 ## What NOT to Build
 
@@ -38,6 +43,9 @@ A Rust binary in `device/` with a single `init` subcommand that prints a hardcod
 ```bash
 cargo build -p device && cargo test -p device
 cargo run --bin device -- init
+# Expected:
+# Serial: HARDCODED-001
+# Address: 0x1234567890abcdef1234567890abcdef12345678
 ```
 
 ## Handoff Prompt
@@ -46,7 +54,13 @@ cargo run --bin device -- init
 Create the device CLI crate for HardTrust.
 
 Read the spec at docs/specs/s1a.1-v2-device-cli.spec.md first.
-Add device/ as a new workspace member. Hardcoded values, one subcommand.
 
+Output files:
+- device/Cargo.toml
+- device/src/main.rs
+
+Add device/ as a new workspace member. Hardcoded values, one subcommand.
+Respect the "What NOT to Build" section strictly — do not add anything beyond what is specified.
 After implementation, run `cargo build -p device && cargo test -p device` to validate.
+Branch: feat/s1a.1-register-device
 ```

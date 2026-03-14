@@ -32,14 +32,15 @@ test: forge-build
 e2e-register:
     #!/usr/bin/env bash
     set -euo pipefail
+    trap "kill $ANVIL_PID 2>/dev/null" EXIT
     # Start Anvil in background
     anvil &
     ANVIL_PID=$!
     sleep 2
     # Build and deploy
-    cd contracts && forge build && cd ..
-    CONTRACT_ADDRESS=$(cd contracts && forge script script/Deploy.s.sol \
-      --rpc-url http://127.0.0.1:8545 --broadcast 2>&1 | grep -oP '0x[0-9a-fA-F]{40}' | tail -1)
+    cd contracts && forge build
+    CONTRACT_ADDRESS=$(forge script script/Deploy.s.sol \
+      --rpc-url http://127.0.0.1:8545 --broadcast 2>&1 | grep -oP 'DEPLOYED: \K0x[0-9a-fA-F]{40}')
     cd ..
     echo "Contract: $CONTRACT_ADDRESS"
     # Device init
@@ -49,18 +50,14 @@ e2e-register:
       --serial HARDCODED-001 \
       --device-address 0x1234567890abcdef1234567890abcdef12345678 \
       --contract $CONTRACT_ADDRESS
-    # Confirm
-    RESULT=$(cast call $CONTRACT_ADDRESS "isAttester(address)" 0x70997970C51812dc3A010C7d01b50e0d17dc79C8 --rpc-url http://127.0.0.1:8545)
-    echo "Attester confirmed: $RESULT"
+    # Confirm registration via getDevice
     SERIAL_HASH=$(cast keccak "HARDCODED-001")
     DEVICE=$(cast call $CONTRACT_ADDRESS "getDevice(bytes32)" $SERIAL_HASH --rpc-url http://127.0.0.1:8545)
     echo "Device registered: $DEVICE"
-    # Cleanup
-    kill $ANVIL_PID
     echo "S1a.1 gate: PASSED"
 ```
 
-Note: the exact parsing of deploy output may need adjustment based on Foundry's output format. The implementer should adapt the grep pattern.
+Note: the grep pattern relies on `console.log("DEPLOYED:", address(registry))` in the deploy script (V1). The implementer should verify the format matches.
 
 ## What NOT to Build
 
@@ -82,5 +79,7 @@ Add workspace justfile recipes and e2e validation for HardTrust S1a.1.
 Read the spec at docs/specs/s1a.1-v4-e2e-register.spec.md first.
 All components (contracts, device, attester) must already be implemented.
 
+Respect the "What NOT to Build" section strictly — do not add anything beyond what is specified.
 After implementation, run `just e2e-register` to validate the full flow.
+Branch: feat/s1a.1-register-device (continue on existing branch)
 ```
