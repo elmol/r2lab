@@ -55,6 +55,12 @@ V1 first (types + device emit). V2 depends on V1. V3 depends on V1 + V2.
 
 This is the FINAL gate of "The Wire" walking skeleton. V1 depends on all S1a.1 and S1a.2 specs.
 
+#### S1a Refactor — Polish The Wire
+
+| Spec | Name | Status | Handoff |
+|------|------|--------|---------|
+| S1a-R | [Refactor The Wire](s1a-refactor.spec.md) | Draft | Embedded |
+
 ### S1b — "Real Crypto" | Pending
 
 ### S1c — "Polish & CI" | Pending
