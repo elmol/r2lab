@@ -6,7 +6,7 @@
 - **Last session:** 2026-03-15
 
 ## Last Session Summary
-S1a.2 complete — types crate, device emit, attester verify, e2e validation all passing. S1a.2 gate: PASSED. Bindings strategy decided (sol! in bindings/ crate when 2nd consumer arrives). Ready to write S1a.3 specs.
+S1a complete — The Wire walking skeleton done. All 3 stories (S1a.1-S1a.3) implemented: register, verify VERIFIED, verify UNVERIFIED. "The Wire gate: PASSED". Ready for S1b (Real Crypto) or Phase 7 (Production Readiness).
 
 ## Current Product
 - **Name:** HardTrust
@@ -40,7 +40,7 @@ S1a.2 complete — types crate, device emit, attester verify, e2e validation all
 
 ## Specs & Handoffs
 - `context/specs/INDEX.md` — Traceability index (stories ↔ specs ↔ handoffs)
-- `context/specs/` — 14 specs (S0.1-S0.7 implemented, S1a.1 V1-V4 implemented, S1a.2 V1-V3 implemented)
+- `context/specs/` — 15 specs (S0.1-S0.7 implemented, S1a.1 V1-V4 implemented, S1a.2 V1-V3 implemented, S1a.3 V1 implemented)
 - `context/handoff/` — 8 handoff files (S0.1-S0.7, S1a overview)
 
 ## HardTrust Repo State
@@ -60,4 +60,4 @@ S1a.2 complete — types crate, device emit, attester verify, e2e validation all
 - Remaining open decisions deferred to feature specs (see architecture.md Section 10)
 
 ## Next Action
-Write specs for S1a.3 (verify unregistered device). S1a.1 and S1a.2 stories are complete.
+S1a "The Wire" complete. Next: S1b (Real Crypto) story mapping and specs, or Phase 7 review.
