@@ -6,7 +6,7 @@
 - **Last session:** 2026-03-15
 
 ## Last Session Summary
-S1a complete — The Wire walking skeleton done. All 3 stories (S1a.1-S1a.3) implemented: register, verify VERIFIED, verify UNVERIFIED. "The Wire gate: PASSED". Ready for S1b (Real Crypto) or Phase 7 (Production Readiness).
+S1a Refactor spec written, reviewed, and handed off. 5 polish items: README, --help, consolidate e2e (delete e2e-register/e2e-verify, keep e2e-the-wire), extract script, centralize dev_config. Phase 6 review passed (1 major fixed: DEV_PRIVATE_KEY renamed to DEV_ATTESTER_KEY). Refactor merged. Ready for S1b (Real Crypto).
 
 ## Current Product
 - **Name:** HardTrust
@@ -40,7 +40,7 @@ S1a complete — The Wire walking skeleton done. All 3 stories (S1a.1-S1a.3) imp
 
 ## Specs & Handoffs
 - `context/specs/INDEX.md` — Traceability index (stories ↔ specs ↔ handoffs)
-- `context/specs/` — 15 specs (S0.1-S0.7 implemented, S1a.1 V1-V4 implemented, S1a.2 V1-V3 implemented, S1a.3 V1 implemented)
+- `context/specs/` — 16 specs (S0.1-S0.7 implemented, S1a.1 V1-V4 implemented, S1a.2 V1-V3 implemented, S1a.3 V1 implemented, S1a-R approved)
 - `context/handoff/` — 8 handoff files (S0.1-S0.7, S1a overview)
 
 ## HardTrust Repo State
@@ -60,4 +60,4 @@ S1a complete — The Wire walking skeleton done. All 3 stories (S1a.1-S1a.3) imp
 - Remaining open decisions deferred to feature specs (see architecture.md Section 10)
 
 ## Next Action
-S1a "The Wire" complete. Next: S1b (Real Crypto) story mapping and specs, or Phase 7 review.
+S1a Refactor merged and reviewed. Next: S1b (Real Crypto) — story mapping and specs.

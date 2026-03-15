@@ -59,7 +59,7 @@ This is the FINAL gate of "The Wire" walking skeleton. V1 depends on all S1a.1 a
 
 | Spec | Name | Status | Handoff |
 |------|------|--------|---------|
-| S1a-R | [Refactor The Wire](s1a-refactor.spec.md) | Draft | Embedded |
+| S1a-R | [Refactor The Wire](s1a-refactor.spec.md) | Approved | Embedded |
 
 ### S1b — "Real Crypto" | Pending
 
