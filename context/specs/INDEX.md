@@ -39,9 +39,9 @@ V1 and V2 can run in parallel. V3 depends on V1. V4 depends on all.
 
 | Spec | Name | Status | Handoff |
 |------|------|--------|---------|
-| V1 | [Types & Device Emit](s1a.2-v1-types-and-device-emit.spec.md) | Draft | Embedded |
-| V2 | [Attester Verify](s1a.2-v2-attester-verify.spec.md) | Draft | Embedded |
-| V3 | [E2E Verify](s1a.2-v3-e2e-verify.spec.md) | Draft | Embedded |
+| V1 | [Types & Device Emit](s1a.2-v1-types-and-device-emit.spec.md) | Implemented | Embedded |
+| V2 | [Attester Verify](s1a.2-v2-attester-verify.spec.md) | Implemented | Embedded |
+| V3 | [E2E Verify](s1a.2-v3-e2e-verify.spec.md) | Implemented | Embedded |
 
 V1 first (types + device emit). V2 depends on V1. V3 depends on V1 + V2.
 

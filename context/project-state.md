@@ -6,7 +6,7 @@
 - **Last session:** 2026-03-15
 
 ## Last Session Summary
-S1a.1 complete — all 4 vertical specs (V1-V4) implemented and reviewed. Registry contract, device CLI, attester CLI, and e2e validation all passing. Phase 6 review found no critical issues. Ready to write S1a.2 specs.
+S1a.2 complete — types crate, device emit, attester verify, e2e validation all passing. S1a.2 gate: PASSED. Bindings strategy decided (sol! in bindings/ crate when 2nd consumer arrives). Ready to write S1a.3 specs.
 
 ## Current Product
 - **Name:** HardTrust
@@ -40,7 +40,7 @@ S1a.1 complete — all 4 vertical specs (V1-V4) implemented and reviewed. Regist
 
 ## Specs & Handoffs
 - `context/specs/INDEX.md` — Traceability index (stories ↔ specs ↔ handoffs)
-- `context/specs/` — 11 specs (S0.1-S0.7 implemented, S1a.1 V1-V4 implemented)
+- `context/specs/` — 14 specs (S0.1-S0.7 implemented, S1a.1 V1-V4 implemented, S1a.2 V1-V3 implemented)
 - `context/handoff/` — 8 handoff files (S0.1-S0.7, S1a overview)
 
 ## HardTrust Repo State
@@ -60,4 +60,4 @@ S1a.1 complete — all 4 vertical specs (V1-V4) implemented and reviewed. Regist
 - Remaining open decisions deferred to feature specs (see architecture.md Section 10)
 
 ## Next Action
-Write specs for S1a.2 (verify registered device). S1a.1 story is complete.
+Write specs for S1a.3 (verify unregistered device). S1a.1 and S1a.2 stories are complete.
