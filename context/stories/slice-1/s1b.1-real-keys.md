@@ -13,7 +13,7 @@ This is a horizontal story that touches device/ and types/ (shared address deriv
 ## Acceptance Criteria
 
 - [ ] Given a Raspberry Pi, when I run `device init` for the first time, then I see my device's serial number and a unique Ethereum address printed to the screen
-- [ ] Given a dev or CI machine without hardware identity, when I run `device init` for the first time, then I still see a serial number and a unique Ethereum address, both clearly marked as emulated
+- [ ] Given a dev or CI machine without hardware identity, when I run `device init` for the first time, then I still see a serial number and a unique Ethereum address, both clearly marked as emulated — serial and address are prefixed with `[EMULATED]`
 - [ ] Given I have already run `device init`, when I run `device init` again, then I see a warning that my identity already exists and nothing changes
 - [ ] Given any successful run of `device init`, when I later use the device, then my identity is available without re-generating it
 

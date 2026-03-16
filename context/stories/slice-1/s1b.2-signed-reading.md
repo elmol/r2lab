@@ -11,8 +11,7 @@ Building on S1b.1 (real keypair generation), this slice replaces the `0xFAKESIG`
 ## Acceptance Criteria
 
 - [ ] Given I have initialized my device (run `device init`), when I run `device emit`, then the reading file contains a real signature — not a placeholder like `0xFAKESIG`
-- [ ] Given I have NOT initialized my device, when I run `device emit`, then I see a clear error message telling me I need to initialize my device first, and no reading file is written silently with a fake or empty signature
-- [ ] Given I have initialized my device, when I run `device emit` twice with the same reading values, then both reading files contain the same signature — the signature is consistent for the same device and data
+- [ ] Given I have NOT initialized my device, when I run `device emit`, then I see a clear error message telling me to run `device init` first, and no reading file is created
 - [ ] Given a reading file produced by `device emit`, when I inspect it, then the signature field looks like a real signature (not a short placeholder or empty string)
 
 ## Out of Scope
@@ -30,7 +29,6 @@ Building on S1b.1 (real keypair generation), this slice replaces the `0xFAKESIG`
 
 - ADR-0002: secp256k1 for device identity
 - ADR-0005: Hybrid storage (readings as JSON)
-- ADR-0007 (to be created in S1b.3): no Ethereum personal sign prefix for device readings
 
 ## Definition of Done
 

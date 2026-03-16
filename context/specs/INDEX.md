@@ -65,21 +65,36 @@ This is the FINAL gate of "The Wire" walking skeleton. V1 depends on all S1a.1 a
 
 #### S1b.1 — Real Keys
 
+**Story:** [S1b.1](../stories/slice-1/s1b.1-real-keys.md)
+
 | Spec | Name | Status | Handoff |
 |------|------|--------|---------|
-| S1b.1 | [Real Keys](s1b.1-real-keys.spec.md) | Draft | Embedded |
+| V1 | [Key Generation](s1b.1-v1-key-generation.spec.md) | Draft | Embedded |
+| V2 | [Device Init](s1b.1-v2-device-init.spec.md) | Draft | Embedded |
+
+V1 first (pure function in types/). V2 depends on V1.
 
 #### S1b.2 — Signed Reading
 
+**Story:** [S1b.2](../stories/slice-1/s1b.2-signed-reading.md)
+
 | Spec | Name | Status | Handoff |
 |------|------|--------|---------|
-| S1b.2 | [Signed Reading](s1b.2-signed-reading.spec.md) | Draft | Embedded |
+| V1 | [sign_reading function](s1b.2-v1-sign-reading.spec.md) | Draft | Embedded |
+| V2 | [Device Emit](s1b.2-v2-device-emit.spec.md) | Draft | Embedded |
+
+V1 depends on S1b.1-V1 (k256 in types/). V2 depends on V1 + S1b.1-V2.
 
 #### S1b.3 — Real Verify
 
+**Story:** [S1b.3](../stories/slice-1/s1b.3-real-verify.md)
+
 | Spec | Name | Status | Handoff |
 |------|------|--------|---------|
-| S1b.3 | [Real Verify](s1b.3-real-verify.spec.md) | Draft | Embedded |
+| V1 | [verify_reading function](s1b.3-v1-verify-reading.spec.md) | Draft | Embedded |
+| V2 | [Attester Verify](s1b.3-v2-attester-verify.spec.md) | Draft | Embedded |
+
+V1 depends on S1b.2-V1 (sign_reading, for round-trip test). V2 depends on V1.
 
 ### S1c — "Polish & CI" | Pending
 

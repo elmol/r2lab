@@ -19,6 +19,7 @@ This is a horizontal story — touches `attester/` and `types/` (for a pure `ver
 - [ ] Given a reading.json where I change the timestamp, when I run `attester verify`, then I see **UNVERIFIED** — the data has been tampered with
 - [ ] Given a reading.json where I change the serial number, when I run `attester verify`, then I see **UNVERIFIED** — the data has been tampered with
 - [ ] Given a reading.json where the device address field looks correct but the data was altered, when I run `attester verify`, then I still see **UNVERIFIED** — a correct-looking address is not enough if the data was tampered with
+- [ ] Given a reading.json where the address field matches a registered device but the signature was produced by a different private key, when I run `attester verify`, then I see **UNVERIFIED**
 - [ ] Given a reading.json with a broken or invented signature, when I run `attester verify`, then I see **UNVERIFIED** — not an error or crash
 - [ ] Given a reading.json from a device that was never registered, when I run `attester verify`, then I see **UNVERIFIED**
 - [ ] The output of verify is the same as before: **VERIFIED** or **UNVERIFIED** — nothing else changes for the user
@@ -37,6 +38,7 @@ This is a horizontal story — touches `attester/` and `types/` (for a pure `ver
 
 - S1b.1 must be complete (real key generation exists)
 - S1b.2 must be complete (real ECDSA signatures exist)
+- Inherits contract dependency from S1a.1/S1a.2 — on-chain registry query is unchanged.
 
 ## Definition of Done
 
@@ -45,4 +47,4 @@ This is a horizontal story — touches `attester/` and `types/` (for a pure `ver
 - `verify_reading` function in `types/` is pure and unit-tested
 - ADR-0007 written in `docs/adr/`
 - `just build` and `just test` pass
-- `just e2e-the-wire` still passes (fake-reading.json still produces UNVERIFIED — now for crypto reasons, not just address mismatch)
+- `just e2e-the-wire` still passes
