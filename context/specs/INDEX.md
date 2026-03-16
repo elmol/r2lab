@@ -13,6 +13,7 @@ Traceability map between user stories, specs, and handoff prompts.
 | S0.5 | [AI Dev Practices](s0.5-ai-dev-practices.spec.md) | — | Implemented | [s0.5-handoff](../handoff/s0.5-handoff.md) |
 | S0.6 | [CLAUDE.md Updates](s0.6-hardtrust-claude-md-updates.spec.md) | — | Implemented | [s0.6-handoff](../handoff/s0.6-handoff.md) |
 | S0.7 | [Solidity Static Analysis](s0.7-solidity-static-analysis.spec.md) | — | Implemented | [s0.7-handoff](../handoff/s0.7-handoff.md) |
+| S0.8 | [CI End-to-End Tests](s0.8-ci-e2e.spec.md) | — | Draft | Embedded |
 
 ## Slice 1 — CLI/Console
 
@@ -69,8 +70,8 @@ This is the FINAL gate of "The Wire" walking skeleton. V1 depends on all S1a.1 a
 
 | Spec | Name | Status | Handoff |
 |------|------|--------|---------|
-| V1 | [Key Generation](s1b.1-v1-key-generation.spec.md) | Draft | Embedded |
-| V2 | [Device Init](s1b.1-v2-device-init.spec.md) | Draft | Embedded |
+| V1 | [Key Generation](s1b.1-v1-key-generation.spec.md) | Implemented | Embedded |
+| V2 | [Device Init](s1b.1-v2-device-init.spec.md) | Implemented | Embedded |
 
 V1 first (pure function in types/). V2 depends on V1.
 
@@ -80,8 +81,8 @@ V1 first (pure function in types/). V2 depends on V1.
 
 | Spec | Name | Status | Handoff |
 |------|------|--------|---------|
-| V1 | [sign_reading function](s1b.2-v1-sign-reading.spec.md) | Draft | Embedded |
-| V2 | [Device Emit](s1b.2-v2-device-emit.spec.md) | Draft | Embedded |
+| V1 | [sign_reading function](s1b.2-v1-sign-reading.spec.md) | Implemented | Embedded |
+| V2 | [Device Emit](s1b.2-v2-device-emit.spec.md) | Implemented | Embedded |
 
 V1 depends on S1b.1-V1 (k256 in types/). V2 depends on V1 + S1b.1-V2.
 
@@ -91,8 +92,8 @@ V1 depends on S1b.1-V1 (k256 in types/). V2 depends on V1 + S1b.1-V2.
 
 | Spec | Name | Status | Handoff |
 |------|------|--------|---------|
-| V1 | [verify_reading function](s1b.3-v1-verify-reading.spec.md) | Draft | Embedded |
-| V2 | [Attester Verify](s1b.3-v2-attester-verify.spec.md) | Draft | Embedded |
+| V1 | [verify_reading function](s1b.3-v1-verify-reading.spec.md) | Implemented | Embedded |
+| V2 | [Attester Verify](s1b.3-v2-attester-verify.spec.md) | Implemented | Embedded |
 
 V1 depends on S1b.2-V1 (sign_reading, for round-trip test). V2 depends on V1.
 
