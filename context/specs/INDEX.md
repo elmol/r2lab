@@ -61,7 +61,25 @@ This is the FINAL gate of "The Wire" walking skeleton. V1 depends on all S1a.1 a
 |------|------|--------|---------|
 | S1a-R | [Refactor The Wire](s1a-refactor.spec.md) | Approved | Embedded |
 
-### S1b — "Real Crypto" | Pending
+### S1b — "Real Crypto"
+
+#### S1b.1 — Real Keys
+
+| Spec | Name | Status | Handoff |
+|------|------|--------|---------|
+| S1b.1 | [Real Keys](s1b.1-real-keys.spec.md) | Draft | Embedded |
+
+#### S1b.2 — Signed Reading
+
+| Spec | Name | Status | Handoff |
+|------|------|--------|---------|
+| S1b.2 | [Signed Reading](s1b.2-signed-reading.spec.md) | Draft | Embedded |
+
+#### S1b.3 — Real Verify
+
+| Spec | Name | Status | Handoff |
+|------|------|--------|---------|
+| S1b.3 | [Real Verify](s1b.3-real-verify.spec.md) | Draft | Embedded |
 
 ### S1c — "Polish & CI" | Pending
 
