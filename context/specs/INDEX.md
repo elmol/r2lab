@@ -97,6 +97,17 @@ V1 depends on S1b.1-V1 (k256 in types/). V2 depends on V1 + S1b.1-V2.
 
 V1 depends on S1b.2-V1 (sign_reading, for round-trip test). V2 depends on V1.
 
+#### S1b Refactor — CLI/Core Separation
+
+| Spec | Name | Status | Handoff |
+|------|------|--------|---------|
+| S1b-R1 | [Core Rename + reading_prehash](s1b-r1-core-rename.spec.md) | Draft | Embedded |
+| S1b-R2 | [Device CLI/Core Split](s1b-r2-device-core.spec.md) | Draft | Embedded |
+| S1b-R3 | [Attester CLI/Core Split](s1b-r3-attester-core.spec.md) | Draft | Embedded |
+| S1b-R4 | [Error Handling](s1b-r4-error-handling.spec.md) | Draft | Embedded |
+
+R1 first. R2 and R3 depend on R1 (can run in parallel). R4 depends on R2 + R3.
+
 ### S1c — "Polish & CI" | Pending
 
 ## Notes
