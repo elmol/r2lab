@@ -118,3 +118,17 @@ Sub-slices (1a, 1b, 1c) are horizontal passes of increasing depth:
 - **1c:** Edge cases, CI, polish
 
 Avoid premature abstractions (e.g., don't create a `common/` crate in 1a when hardcoded values suffice). Let shared code emerge from actual duplication, not from anticipated need.
+
+---
+
+## 10. Test-Driven Development (TDD)
+
+All implementation follows the TDD cycle: **test → implement → refactor**.
+
+- Write the test first (it should fail — red)
+- Implement the minimum code to make it pass (green)
+- Refactor while keeping tests green (refactor)
+
+Specs must define expected test cases BEFORE describing the implementation. Handoff prompts must instruct "write tests first, then implement." This ensures testability is a design constraint, not an afterthought.
+
+Tests follow the pyramid: unit tests for domain logic (bulk, fast, no IO), integration tests for adapters (fewer, with real IO), e2e for the full system (minimal, slow).
