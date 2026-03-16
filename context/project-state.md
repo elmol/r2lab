@@ -3,10 +3,10 @@
 ## Status
 - **Phase:** 4/5/6 — Feature Specs + Implementation Handoff + Review (running iteratively)
 - **Started:** 2026-03-12
-- **Last session:** 2026-03-15
+- **Last session:** 2026-03-16
 
 ## Last Session Summary
-S1a Refactor spec written, reviewed, and handed off. 5 polish items: README, --help, consolidate e2e (delete e2e-register/e2e-verify, keep e2e-the-wire), extract script, centralize dev_config. Phase 6 review passed (1 major fixed: DEV_PRIVATE_KEY renamed to DEV_ATTESTER_KEY). Refactor merged. Ready for S1b (Real Crypto).
+S1b complete + S0.8 CI e2e implemented. Phase 6 global review: 3 sync issues fixed, project-state updated, HardTrust cleaned up.
 
 ## Current Product
 - **Name:** HardTrust
@@ -36,11 +36,11 @@ S1a Refactor spec written, reviewed, and handed off. 5 polish items: README, --h
 - `context/architecture.md` — System architecture, components, data flow, crypto, CI/CD, dev workflow
 
 ## Stories Artifacts
-- `context/stories/slice-1/` — Flat sub-slice stories (S1a defined, S1b/S1c TBD)
+- `context/stories/slice-1/` — Flat sub-slice stories (S1a + S1b defined, S1c TBD)
 
 ## Specs & Handoffs
 - `context/specs/INDEX.md` — Traceability index (stories ↔ specs ↔ handoffs)
-- `context/specs/` — 16 specs (S0.1-S0.7 implemented, S1a.1 V1-V4 implemented, S1a.2 V1-V3 implemented, S1a.3 V1 implemented, S1a-R approved)
+- `context/specs/` — 23 specs (S0.1-S0.8 implemented, S1a.1 V1-V4 implemented, S1a.2 V1-V3 implemented, S1a.3 V1 implemented, S1a-R implemented, S1b.1-S1b.3 V1-V2 implemented)
 - `context/handoff/` — 8 handoff files (S0.1-S0.7, S1a overview)
 
 ## HardTrust Repo State
@@ -48,11 +48,13 @@ S1a Refactor spec written, reviewed, and handed off. 5 polish items: README, --h
 - CI running (GitHub Actions: lint, test, Solhint, integration stub, e2e stub)
 - CLAUDE.md with AI dev practices, build order, Anvil context, pre-commit validation
 - REVIEW.md with expanded review criteria
-- 6 seed ADRs in docs/adr/
+- 7 ADRs (including ADR-0007: no personal sign prefix)
 - Slice 1 stories in docs/stories/slice-1/
 - Architecture doc in docs/architecture.md
-- Specs S0.2-S0.7 + S1a.1 V1-V4 in docs/specs/
+- All specs synced to docs/specs/ (S0.1-S0.8, S1a full, S1b full)
 - HardTrustRegistry contract deployed (V1) with Solhint + Aderyn passing
+- Real crypto: k256 keypair generation, ECDSA signing (sign_reading), ecrecover verification (verify_reading) in types/
+- CI e2e: just e2e-the-wire runs on every push (GitHub Actions)
 - Solhint + Aderyn configured for static analysis
 
 ## Open Questions
@@ -60,4 +62,4 @@ S1a Refactor spec written, reviewed, and handed off. 5 polish items: README, --h
 - Remaining open decisions deferred to feature specs (see architecture.md Section 10)
 
 ## Next Action
-S1a Refactor merged and reviewed. Next: S1b (Real Crypto) — story mapping and specs.
+S1c (Polish & CI) story mapping.

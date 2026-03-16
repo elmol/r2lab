@@ -22,9 +22,9 @@ Each sub-slice is implemented as **horizontal stories** — thin end-to-end pass
 
 | Story | Name | Delivers |
 |-------|------|----------|
-| S1b.1 | Real Keys | `device init` generates real keypair, persists `~/.hardtrust/device.key`, prints real serial + derived address |
-| S1b.2 | Signed Reading | `device emit` produces a real ECDSA signature over the canonical payload; `reading.json` has a real hex sig |
-| S1b.3 | Real Verify | `attester verify` recovers signer address via ecrecover, compares to on-chain address — not just equality check |
+| [S1b.1](s1b.1-real-keys.md) | Real Keys | `device init` generates real keypair, persists `~/.hardtrust/device.key`, prints real serial + derived address |
+| [S1b.2](s1b.2-signed-reading.md) | Signed Reading | `device emit` produces a real ECDSA signature over the canonical payload; `reading.json` has a real hex sig |
+| [S1b.3](s1b.3-real-verify.md) | Real Verify | `attester verify` recovers signer address via ecrecover, compares to on-chain address — not just equality check |
 
 **Technical decisions:**
 - Crypto library: `k256` crate for key gen + signing; Alloy `Signature::recover_address_from_prehash` for verification

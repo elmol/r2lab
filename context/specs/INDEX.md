@@ -13,7 +13,7 @@ Traceability map between user stories, specs, and handoff prompts.
 | S0.5 | [AI Dev Practices](s0.5-ai-dev-practices.spec.md) | — | Implemented | [s0.5-handoff](../handoff/s0.5-handoff.md) |
 | S0.6 | [CLAUDE.md Updates](s0.6-hardtrust-claude-md-updates.spec.md) | — | Implemented | [s0.6-handoff](../handoff/s0.6-handoff.md) |
 | S0.7 | [Solidity Static Analysis](s0.7-solidity-static-analysis.spec.md) | — | Implemented | [s0.7-handoff](../handoff/s0.7-handoff.md) |
-| S0.8 | [CI End-to-End Tests](s0.8-ci-e2e.spec.md) | — | Draft | Embedded |
+| S0.8 | [CI End-to-End Tests](s0.8-ci-e2e.spec.md) | — | Implemented | Embedded |
 
 ## Slice 1 — CLI/Console
 
@@ -60,7 +60,7 @@ This is the FINAL gate of "The Wire" walking skeleton. V1 depends on all S1a.1 a
 
 | Spec | Name | Status | Handoff |
 |------|------|--------|---------|
-| S1a-R | [Refactor The Wire](s1a-refactor.spec.md) | Approved | Embedded |
+| S1a-R | [Refactor The Wire](s1a-refactor.spec.md) | Implemented | Embedded |
 
 ### S1b — "Real Crypto"
 
