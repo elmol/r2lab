@@ -6,7 +6,7 @@
 - **Last session:** 2026-03-16
 
 ## Last Session Summary
-S1b complete + S0.8 CI e2e implemented. Phase 6 global review: 3 sync issues fixed, project-state updated, HardTrust cleaned up.
+S1b refactor complete (R1-R4): types/ renamed to core/, CLI/core separation in device + attester, error handling with Result. TDD principle added. 27 specs total, all implemented.
 
 ## Current Product
 - **Name:** HardTrust
@@ -40,7 +40,7 @@ S1b complete + S0.8 CI e2e implemented. Phase 6 global review: 3 sync issues fix
 
 ## Specs & Handoffs
 - `context/specs/INDEX.md` — Traceability index (stories ↔ specs ↔ handoffs)
-- `context/specs/` — 23 specs (S0.1-S0.8 implemented, S1a.1 V1-V4 implemented, S1a.2 V1-V3 implemented, S1a.3 V1 implemented, S1a-R implemented, S1b.1-S1b.3 V1-V2 implemented)
+- `context/specs/` — 27 specs (S0.1-S0.8, S1a.1 V1-V4, S1a.2 V1-V3, S1a.3 V1, S1a-R, S1b.1-S1b.3 V1-V2, S1b-R1 to R4 — all implemented)
 - `context/handoff/` — 8 handoff files (S0.1-S0.7, S1a overview)
 
 ## HardTrust Repo State
@@ -53,7 +53,9 @@ S1b complete + S0.8 CI e2e implemented. Phase 6 global review: 3 sync issues fix
 - Architecture doc in docs/architecture.md
 - All specs synced to docs/specs/ (S0.1-S0.8, S1a full, S1b full)
 - HardTrustRegistry contract deployed (V1) with Solhint + Aderyn passing
-- Real crypto: k256 keypair generation, ECDSA signing (sign_reading), ecrecover verification (verify_reading) in types/
+- Real crypto: k256 keypair generation, ECDSA signing (sign_reading), ecrecover verification (verify_reading) in core/
+- Hexagonal-lite: CLI/core separation in device/ and attester/ (lib.rs = pure logic, main.rs = IO shell)
+- Error handling: Result-based, no .expect() panics
 - CI e2e: just e2e-the-wire runs on every push (GitHub Actions)
 - Solhint + Aderyn configured for static analysis
 
@@ -62,4 +64,4 @@ S1b complete + S0.8 CI e2e implemented. Phase 6 global review: 3 sync issues fix
 - Remaining open decisions deferred to feature specs (see architecture.md Section 10)
 
 ## Next Action
-S1c (Polish & CI) story mapping.
+S1c (Polish & CI) story mapping — on-chain ecrecover, edge cases, real temperature.
