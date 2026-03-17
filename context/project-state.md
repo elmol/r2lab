@@ -3,10 +3,10 @@
 ## Status
 - **Phase:** 4/5/6 — Feature Specs + Implementation Handoff + Review (running iteratively)
 - **Started:** 2026-03-12
-- **Last session:** 2026-03-17
+- **Last session:** 2026-03-18
 
 ## Last Session Summary
-Phase 7 nearly complete. S1 tech debt (V1-V5) and release pipeline (S0.9-S0.16) all implemented and merged. v0.1.0-rc8 released with multi-platform CI, install scripts, cargo-release workflow. r2lab synced (51 specs, all handoffs created). One task remaining: execute HardTrust sync handoff (push s0.16 branch, stage specs, update README with S0.17).
+Phase 7 complete. S0.16 (version check script) and S0.17 (README update) merged. HardTrust main is clean — 51 specs synced, release pipeline working, README reflects full Phase 7 work. All phases through 7 closed.
 
 ## Current Product
 - **Name:** HardTrust
@@ -22,7 +22,7 @@ Phase 7 nearly complete. S1 tech debt (V1-V5) and release pipeline (S0.9-S0.16) 
 | 4 — Feature Specs | ✅ Complete (Slice 1) | 2026-03-16 |
 | 5 — Implementation Handoff | ✅ Complete (Slice 1) | 2026-03-16 |
 | 6 — Review & Validation | ✅ Slice 1 closeout review done | 2026-03-16 |
-| 7 — Production Readiness | ⏳ Pending | — |
+| 7 — Production Readiness | ✅ Complete (Slice 1) | 2026-03-18 |
 
 ## Discovery Artifacts
 - `context/discovery.md` — Core discovery document
@@ -48,7 +48,7 @@ Phase 7 nearly complete. S1 tech debt (V1-V5) and release pipeline (S0.9-S0.16) 
   - S1c.1 V1-V2, S1c.2 V1-V2, S1c.3 V1-V2 (6 specs, Implemented)
   - S1-Debt-V1 to V5 (5 tech debt specs, Implemented)
   - S0.9-S0.16 (8 Phase 7 release pipeline specs, Implemented)
-  - S0.17 (1 README update spec, Approved)
+  - S0.17 (1 README update spec, Implemented)
 - `context/handoff/` — 15 handoff files (S0.1-S0.7, S0.9-S0.16, S1a overview, S1b-R5, S1-Debt-V1-V5)
 
 ## HardTrust Repo State
@@ -79,4 +79,4 @@ Phase 7 nearly complete. S1 tech debt (V1-V5) and release pipeline (S0.9-S0.16) 
 - Remaining open decisions deferred to feature specs (see architecture.md Section 10)
 
 ## Next Action
-Execute S0.17 handoff in HardTrust repo: push s0.16 branch (PR + merge), stage new spec files, update README.
+Slice 2 planning — Web Portal (attester webapp + public verification page). Start Phase 4 Feature Specs for Slice 2 stories.

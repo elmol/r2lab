@@ -171,7 +171,7 @@ V1 and V2 can run in PARALLEL (independent binaries).
 | S0.14 | [CLI Version Flag](s0.14-cli-version.spec.md) | Implemented | [s0.14-handoff](../handoff/s0.14-handoff.md) |
 | S0.15 | [Versioning Workflow](s0.15-versioning-workflow.spec.md) | Implemented | [s0.15-handoff](../handoff/s0.15-handoff.md) |
 | S0.16 | [Version Check Script](s0.16-version-check-script.spec.md) | Implemented | [s0.16-handoff](../handoff/s0.16-handoff.md) |
-| S0.17 | [HardTrust README Update](s0.17-readme-update.spec.md) | Approved | Pending |
+| S0.17 | [HardTrust README Update](s0.17-readme-update.spec.md) | Implemented | Embedded |
 
 ## Notes
 
