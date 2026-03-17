@@ -3,10 +3,10 @@
 ## Status
 - **Phase:** 4/5/6 — Feature Specs + Implementation Handoff + Review (running iteratively)
 - **Started:** 2026-03-12
-- **Last session:** 2026-03-16
+- **Last session:** 2026-03-17
 
 ## Last Session Summary
-Slice 1 complete. S1c "Polish & CI" implemented (6 specs): real temperature, contract hardening (duplicate guard + events), graceful failure for all CLI error paths. 34 specs total, all implemented. Slice 1 closeout review done.
+Phase 7 nearly complete. S1 tech debt (V1-V5) and release pipeline (S0.9-S0.16) all implemented and merged. v0.1.0-rc8 released with multi-platform CI, install scripts, cargo-release workflow. r2lab synced (51 specs, all handoffs created). One task remaining: execute HardTrust sync handoff (push s0.16 branch, stage specs, update README with S0.17).
 
 ## Current Product
 - **Name:** HardTrust
