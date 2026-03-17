@@ -144,6 +144,35 @@ V1 first (Solidity changes). V2 depends on V1.
 
 V1 and V2 can run in PARALLEL (independent binaries).
 
+## Tech Debt — Pre-Slice 2
+
+| Spec | Name | Status | Handoff |
+|------|------|--------|---------|
+| S1-Debt-V1 | [Registration Error Extract](s1-debt-v1-registration-error-extract.spec.md) | Implemented | [s1-debt-v1-handoff](../handoff/s1-debt-v1-handoff.md) |
+| S1-Debt-V2 | [CI Pipeline Fix & Docs Sync](s1-debt-v2-ci-docs-fix.spec.md) | Implemented | [s1-debt-v2-handoff](../handoff/s1-debt-v2-handoff.md) |
+| S1-Debt-V3 | [Dead Code & Contract Cleanup](s1-debt-v3-dead-code-cleanup.spec.md) | Implemented | [s1-debt-v3-handoff](../handoff/s1-debt-v3-handoff.md) |
+| S1-Debt-V4 | [Dev Config Extraction](s1-debt-v4-dev-config-extraction.spec.md) | Implemented | [s1-debt-v4-handoff](../handoff/s1-debt-v4-handoff.md) |
+| S1-Debt-V5 | [Dependency & Code Quality](s1-debt-v5-code-quality.spec.md) | Implemented | [s1-debt-v5-handoff](../handoff/s1-debt-v5-handoff.md) |
+
+### Execution Order
+
+- **Wave 1 (parallel):** V1 + V2 + V3 + V5 (no file overlap)
+- **Wave 2 (sequential):** V4 (depends on V3 — both modify dev_config.rs)
+
+## Phase 7 — Release Infrastructure
+
+| Spec | Name | Status | Handoff |
+|------|------|--------|---------|
+| S0.9 | [Release Pipeline](s0.9-release-pipeline.spec.md) | Implemented | [s0.9-handoff](../handoff/s0.9-handoff.md) |
+| S0.10 | [Install Script](s0.10-install-script.spec.md) | Implemented | [s0.10-handoff](../handoff/s0.10-handoff.md) |
+| S0.11 | [Deployment Docs](s0.11-deployment-docs.spec.md) | Implemented | [s0.11-handoff](../handoff/s0.11-handoff.md) |
+| S0.12 | [Release Pipeline v2](s0.12-release-pipeline-v2.spec.md) | Implemented | [s0.12-handoff](../handoff/s0.12-handoff.md) |
+| S0.13 | [Install Script Fix (pre-release)](s0.13-install-script-fix.spec.md) | Implemented | [s0.13-handoff](../handoff/s0.13-handoff.md) |
+| S0.14 | [CLI Version Flag](s0.14-cli-version.spec.md) | Implemented | [s0.14-handoff](../handoff/s0.14-handoff.md) |
+| S0.15 | [Versioning Workflow](s0.15-versioning-workflow.spec.md) | Implemented | [s0.15-handoff](../handoff/s0.15-handoff.md) |
+| S0.16 | [Version Check Script](s0.16-version-check-script.spec.md) | Implemented | [s0.16-handoff](../handoff/s0.16-handoff.md) |
+| S0.17 | [HardTrust README Update](s0.17-readme-update.spec.md) | Approved | Pending |
+
 ## Notes
 
 - **Setup specs (S0.x)** have no user story — infrastructure prerequisites
