@@ -6,7 +6,7 @@
 - **Last session:** 2026-03-16
 
 ## Last Session Summary
-S1b refactor complete (R1-R4): types/ renamed to core/, CLI/core separation in device + attester, error handling with Result. TDD principle added. 27 specs total, all implemented.
+Slice 1 complete. S1c "Polish & CI" implemented (6 specs): real temperature, contract hardening (duplicate guard + events), graceful failure for all CLI error paths. 34 specs total, all implemented. Slice 1 closeout review done.
 
 ## Current Product
 - **Name:** HardTrust
@@ -19,9 +19,9 @@ S1b refactor complete (R1-R4): types/ renamed to core/, CLI/core separation in d
 | 1 — Discovery | ✅ Complete | 2026-03-12 |
 | 2 — Story Mapping | ✅ Complete | 2026-03-13 |
 | 3 — Architecture | ✅ Complete | 2026-03-13 |
-| 4 — Feature Specs | 🔄 In Progress | — |
-| 5 — Implementation Handoff | 🔄 In Progress (iterative with Phase 4) | — |
-| 6 — Review & Validation | 🔄 First review done (infra) | 2026-03-14 |
+| 4 — Feature Specs | ✅ Complete (Slice 1) | 2026-03-16 |
+| 5 — Implementation Handoff | ✅ Complete (Slice 1) | 2026-03-16 |
+| 6 — Review & Validation | ✅ Slice 1 closeout review done | 2026-03-16 |
 | 7 — Production Readiness | ⏳ Pending | — |
 
 ## Discovery Artifacts
@@ -36,32 +36,41 @@ S1b refactor complete (R1-R4): types/ renamed to core/, CLI/core separation in d
 - `context/architecture.md` — System architecture, components, data flow, crypto, CI/CD, dev workflow
 
 ## Stories Artifacts
-- `context/stories/slice-1/` — Flat sub-slice stories (S1a + S1b defined, S1c TBD)
+- `context/stories/slice-1/` — 9 stories across 3 sub-slices (S1a.1-3, S1b.1-3, S1c.1-3) — all complete
 
 ## Specs & Handoffs
 - `context/specs/INDEX.md` — Traceability index (stories ↔ specs ↔ handoffs)
-- `context/specs/` — 27 specs (S0.1-S0.8, S1a.1 V1-V4, S1a.2 V1-V3, S1a.3 V1, S1a-R, S1b.1-S1b.3 V1-V2, S1b-R1 to R4 — all implemented)
-- `context/handoff/` — 8 handoff files (S0.1-S0.7, S1a overview)
+- `context/specs/` — 34 specs (all Implemented):
+  - S0.1-S0.8 (8 infra specs)
+  - S1a.1 V1-V4, S1a.2 V1-V3, S1a.3 V1, S1a-R (9 specs)
+  - S1b.1 V1-V2, S1b.2 V1-V2, S1b.3 V1-V2 (6 specs)
+  - S1b-R1 to R5 (5 refactor specs)
+  - S1c.1 V1-V2, S1c.2 V1-V2, S1c.3 V1-V2 (6 specs)
+- `context/handoff/` — 9 handoff files (S0.1-S0.7, S1a overview, S1b-R5)
 
 ## HardTrust Repo State
-- Cargo workspace + Foundry project initialized
-- CI running (GitHub Actions: lint, test, Solhint, integration stub, e2e stub)
-- CLAUDE.md with AI dev practices, build order, Anvil context, pre-commit validation
-- REVIEW.md with expanded review criteria
-- 7 ADRs (including ADR-0007: no personal sign prefix)
-- Slice 1 stories in docs/stories/slice-1/
-- Architecture doc in docs/architecture.md
-- All specs synced to docs/specs/ (S0.1-S0.8, S1a full, S1b full)
-- HardTrustRegistry contract deployed (V1) with Solhint + Aderyn passing
-- Real crypto: k256 keypair generation, ECDSA signing (sign_reading), ecrecover verification (verify_reading) in core/
-- Hexagonal-lite: CLI/core separation in device/ and attester/ (lib.rs = pure logic, main.rs = IO shell)
-- Error handling: Result-based, no .expect() panics
-- CI e2e: just e2e-the-wire runs on every push (GitHub Actions)
-- Solhint + Aderyn configured for static analysis
+- Cargo workspace: `device/`, `attester/`, `protocol/` (hardtrust-protocol) + Foundry `contracts/`
+- `protocol/` crate with internal modules: domain.rs, crypto.rs, error.rs, dev_config.rs
+- CLI/core separation: device/ and attester/ each have lib.rs (pure logic) + main.rs (IO shell)
+- Real crypto: k256 keypair generation, ECDSA signing (sign_reading), ecrecover verification (verify_reading)
+- Real temperature: CPU sensor read with emulation fallback (ADR-0006)
+- Contract hardening: DeviceAlreadyRegistered error, DeviceRegistered event, duplicate guard
+- Error handling: Result-based, graceful failure across all CLI commands
+- 8 ADRs (ADR-0001 through ADR-0008)
+- CI: lint, test, Solhint, e2e-the-wire on every push (GitHub Actions)
+- 51 Rust tests (pass) + 3 ignored + 11 Forge tests (pass)
+- All specs synced to docs/specs/ (S0.x, S1a, S1b, S1c)
+- All stories synced to docs/stories/slice-1/
+
+## Tech Debt (before Slice 2)
+- **3 #[ignore] tests** in attester: `register_duplicate_shows_human_error`, `register_success_shows_confirmation`, `verify_registered_device` — require Anvil + deployed contract, never run in CI
+- **Error parsing coupled to CLI**: duplicate registration error detection is in main.rs, should be extracted to lib.rs for testability
+- **Historical spec references**: 13 specs in docs/specs/ reference old crate names (hardtrust-types, hardtrust-core) — correct at time of writing, superseded by S1b-R1 and S1b-R5
 
 ## Open Questions
 - Resolved: smart contract (single contract), storage (hybrid), crypto (secp256k1)
+- Resolved: on-chain ecrecover deferred to Slice 2 (no CLI consumer)
 - Remaining open decisions deferred to feature specs (see architecture.md Section 10)
 
 ## Next Action
-S1c (Polish & CI) story mapping — on-chain ecrecover, edge cases, real temperature.
+Slice 2 planning — Web Portal (attester webapp + public verification page).

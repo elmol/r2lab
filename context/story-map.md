@@ -29,9 +29,21 @@ Each story is a horizontal slice across all layers (device, contracts, attester)
 | **S1a.2** | As anyone, I verify that a data reading comes from a registered device → VERIFIED |
 | **S1a.3** | As anyone, I see that data from an unregistered device is UNVERIFIED |
 
-### S1b — "Real Crypto" / S1c — "Polish & CI"
+### S1b — "Real Crypto"
 
-Stories TBD — will be defined when the previous sub-slice is complete.
+| Story | Description |
+|-------|-------------|
+| **S1b.1** | As a Device Owner, I run `device init` and get a real cryptographic identity |
+| **S1b.2** | As a Device Owner, `device emit` produces a reading signed with my real private key |
+| **S1b.3** | As anyone, `attester verify` recovers signer from ECDSA signature |
+
+### S1c — "Polish & CI"
+
+| Story | Description |
+|-------|-------------|
+| **S1c.1** | As a Device Owner, `device emit` reads actual CPU temperature (or simulated) |
+| **S1c.2** | As an Attester, duplicate registration is rejected with a clear error |
+| **S1c.3** | As anyone, bad inputs produce clear error messages — no panics |
 
 _Note: The Device Owner shares serial + Ethereum address with the Attester manually (copy/paste, chat, in person). No tooling is built for this step in Slice 1._
 

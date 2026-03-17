@@ -31,7 +31,7 @@ Each sub-slice is implemented as **horizontal stories** — thin end-to-end pass
 - Key storage: raw 32-byte hex string, `~/.hardtrust/device.key`, permissions `0600`
 - Signing payload: keccak256 of canonical tuple `(serial_hash, address, temperature_scaled_i64, timestamp_u64)` — no Ethereum personal sign prefix
 - `common/` crate becomes real: houses `public_key_to_address`, `sign_reading`, `verify_reading`
-- On-chain ecrecover deferred to S1c
+- On-chain ecrecover deferred to Slice 2 (no CLI consumer)
 
 **Exit gate:** Full `just e2e` passes. Corrupting any reading field causes `UNVERIFIED`. `cargo test --workspace` passes including signature round-trip tests.
 
@@ -39,8 +39,17 @@ Each sub-slice is implemented as **horizontal stories** — thin end-to-end pass
 
 ## S1c — "Polish & CI"
 
-**Goal:** Edge cases, CI integration, e2e automation.
+**Goal:** Harden edge cases, replace last hardcoded values, ensure clean error handling across all CLI commands.
 
-Stories: TBD (will be defined when S1b is complete)
+| Story | Name | Delivers |
+|-------|------|----------|
+| [S1c.1](s1c.1-real-temperature.md) | Real Temperature | `device emit` reads real CPU temp (or simulated in emulation) — no more hardcoded 22.5 |
+| [S1c.2](s1c.2-safe-registration.md) | Safe Registration | Contract rejects duplicate serial registration, emits `DeviceRegistered` event, attester shows clear error |
+| [S1c.3](s1c.3-graceful-failure.md) | Graceful Failure | All commands handle missing/corrupted inputs with clear messages — no panics, no raw errors |
 
-**Exit gate:** Slice 1 gate from story map is met.
+**Deferred to Slice 2:**
+- On-chain ecrecover (no CLI consumer — webapp is the natural consumer)
+- Attester key rotation / pause mechanism
+- CI security scanning (cargo audit, Slither)
+
+**Exit gate:** Slice 1 gate from story map is met. All commands handle error cases gracefully. No hardcoded values in the data path.

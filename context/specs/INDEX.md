@@ -73,7 +73,7 @@ This is the FINAL gate of "The Wire" walking skeleton. V1 depends on all S1a.1 a
 | V1 | [Key Generation](s1b.1-v1-key-generation.spec.md) | Implemented | Embedded |
 | V2 | [Device Init](s1b.1-v2-device-init.spec.md) | Implemented | Embedded |
 
-V1 first (pure function in types/). V2 depends on V1.
+V1 first (pure function in protocol/). V2 depends on V1.
 
 #### S1b.2 — Signed Reading
 
@@ -105,10 +105,44 @@ V1 depends on S1b.2-V1 (sign_reading, for round-trip test). V2 depends on V1.
 | S1b-R2 | [Device CLI/Core Split](s1b-r2-device-core.spec.md) | Implemented | Embedded |
 | S1b-R3 | [Attester CLI/Core Split](s1b-r3-attester-core.spec.md) | Implemented | Embedded |
 | S1b-R4 | [Error Handling](s1b-r4-error-handling.spec.md) | Implemented | Embedded |
+| S1b-R5 | [Protocol Rename + Modules](s1b-r5-protocol-rename.spec.md) | Implemented | Embedded |
 
-R1 first. R2 and R3 depend on R1 (can run in parallel). R4 depends on R2 + R3.
+R1 first. R2 and R3 depend on R1 (can run in parallel). R4 depends on R2 + R3. R5 depends on R4.
 
-### S1c — "Polish & CI" | Pending
+### S1c — "Polish & CI"
+
+#### S1c.1 — Real Temperature
+
+**Story:** [S1c.1](../stories/slice-1/s1c.1-real-temperature.md)
+
+| Spec | Name | Status | Handoff |
+|------|------|--------|---------|
+| V1 | [read_temperature Function](s1c.1-v1-read-temperature.spec.md) | Implemented | Embedded |
+| V2 | [Device Emit Integration](s1c.1-v2-device-emit-temp.spec.md) | Implemented | Embedded |
+
+V1 first (pure function in device/lib.rs). V2 depends on V1.
+
+#### S1c.2 — Safe Registration
+
+**Story:** [S1c.2](../stories/slice-1/s1c.2-safe-registration.md)
+
+| Spec | Name | Status | Handoff |
+|------|------|--------|---------|
+| V1 | [Contract Hardening](s1c.2-v1-contract-hardening.spec.md) | Implemented | Embedded |
+| V2 | [Attester Register Error](s1c.2-v2-attester-register-error.spec.md) | Implemented | Embedded |
+
+V1 first (Solidity changes). V2 depends on V1.
+
+#### S1c.3 — Graceful Failure
+
+**Story:** [S1c.3](../stories/slice-1/s1c.3-graceful-failure.md)
+
+| Spec | Name | Status | Handoff |
+|------|------|--------|---------|
+| V1 | [Device Error Paths](s1c.3-v1-device-errors.spec.md) | Implemented | Embedded |
+| V2 | [Attester Error Paths](s1c.3-v2-attester-errors.spec.md) | Implemented | Embedded |
+
+V1 and V2 can run in PARALLEL (independent binaries).
 
 ## Notes
 
