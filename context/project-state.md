@@ -3,10 +3,10 @@
 ## Status
 - **Phase:** 4/5/6 — Feature Specs + Implementation Handoff + Review (running iteratively)
 - **Started:** 2026-03-12
-- **Last session:** 2026-03-18
+- **Last session:** 2026-03-20
 
 ## Last Session Summary
-Phase 7 complete. S0.16 (version check script) and S0.17 (README update) merged. HardTrust main is clean — 51 specs synced, release pipeline working, README reflects full Phase 7 work. All phases through 7 closed.
+Phase 7 fully complete. v0.1.0 stable released (S0.19) with all fixes: CLI --version (S0.14), install trap fix (S0.18), version check script (S0.16), README update (S0.17). GitHub Release has 3 binaries (device ARMv7, attester Linux x86_64, attester macOS arm64) + SHA256SUMS. 53 specs total, all Implemented.
 
 ## Current Product
 - **Name:** HardTrust
@@ -48,7 +48,7 @@ Phase 7 complete. S0.16 (version check script) and S0.17 (README update) merged.
   - S1c.1 V1-V2, S1c.2 V1-V2, S1c.3 V1-V2 (6 specs, Implemented)
   - S1-Debt-V1 to V5 (5 tech debt specs, Implemented)
   - S0.9-S0.16 (8 Phase 7 release pipeline specs, Implemented)
-  - S0.17 (1 README update spec, Implemented)
+  - S0.17-S0.19 (3 specs: README update, install trap fix, stable release, all Implemented)
 - `context/handoff/` — 15 handoff files (S0.1-S0.7, S0.9-S0.16, S1a overview, S1b-R5, S1-Debt-V1-V5)
 
 ## HardTrust Repo State
