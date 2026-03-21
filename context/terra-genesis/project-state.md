@@ -6,7 +6,7 @@
 - **Last session:** 2026-03-21
 
 ## Last Session Summary
-Slice 2a fully complete (v0.2.0 released). Slice 2b in progress: S2b.1-V1 (on-chain verifyCapture) implemented and merged. S2b.1-V2 (on-chain env hashes) in implementation. ADR-0010 created for on-chain verification model. ethskills.com security/testing/audit skills identified for Solidity best practices.
+Slice 2b fully implemented: S2b.1-V1 (on-chain verifyCapture), S2b.1-V2 (env hashes), S2b-Debt-V1 (unified 6-param verifyCapture), S2b-Debt-V2 (RPi serial null byte fix). All 54 tests pass. Full sync audit done — README needs update for new features, version bump 0.1.0→0.3.0 pending. S0.21 release spec created.
 
 ## Current Product
 - **Name:** TerraGenesis
@@ -20,9 +20,9 @@ Slice 2a fully complete (v0.2.0 released). Slice 2b in progress: S2b.1-V1 (on-ch
 | 1 — Discovery | ✅ Inherited from HardTrust | — |
 | 2 — Story Mapping | ✅ Complete (Slice 2a + 2b) | 2026-03-21 |
 | 3 — Architecture | ✅ Inherited + ADR-0009, ADR-0010 | 2026-03-21 |
-| 4 — Feature Specs | ✅ Complete (Slice 2a), In Progress (Slice 2b) | — |
-| 5 — Implementation Handoff | ✅ Complete (Slice 2a), In Progress (Slice 2b) | — |
-| 6 — Review & Validation | ✅ Complete (Slice 2a) | 2026-03-21 |
+| 4 — Feature Specs | ✅ Complete (Slice 2a + 2b) | 2026-03-21 |
+| 5 — Implementation Handoff | ✅ Complete (Slice 2a + 2b) | 2026-03-21 |
+| 6 — Review & Validation | ✅ Complete (Slice 2a + 2b) | 2026-03-21 |
 
 ## Story Mapping Artifacts
 - `context/terra-genesis/story-map.md` — Story map with Slice 2a (Device Capture), 2a.4 (Environment Attestation), 2b (On-Chain Verify), 2c (On-Chain Submit, future)
@@ -49,8 +49,12 @@ Slice 2a fully complete (v0.2.0 released). Slice 2b in progress: S2b.1-V1 (on-ch
     - S0.20 Full Sync, README & Cleanup
   - **Slice 2b:**
     - S2b.1-V1 On-Chain Verify (Implemented)
-    - S2b.1-V2 On-Chain Env Hashes (In Progress)
+    - S2b.1-V2 On-Chain Env Hashes (Implemented)
+    - S2b-Debt-V1 Unify verifyCapture (Implemented)
+    - S2b-Debt-V2 Serial Null Byte Fix (Implemented)
     - S2b.2 On-Chain Submit Proof (Future)
+  - **Sync & Release:**
+    - S0.21 Release v0.3.0 (Draft)
   - **ADRs:**
     - ADR-0009 Capture Script Hardware Adapter
     - ADR-0010 On-Chain Verification Model (Proposed)
@@ -68,4 +72,4 @@ Slice 2a fully complete (v0.2.0 released). Slice 2b in progress: S2b.1-V1 (on-ch
 - v0.2.0 released with Slice 2a
 
 ## Next Action
-Complete S2b.1-V2 (on-chain env hashes). Then cut v0.3.0 release with on-chain verification. Future: S2b.2 (submit proof persistence), Opción B (Merkle prehash for trustless env).
+Execute S0.21 handoff — README update, version bump to 0.3.0, SHA256SUMS, tag v0.3.0. Future: S2b.2 (submit proof persistence), Option B (Merkle prehash for trustless env).

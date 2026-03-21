@@ -35,6 +35,7 @@ Traceability map for TerraGenesis-specific specs. HardTrust base specs (S0.x, S1
 | Spec | Name | Story | Status | Handoff |
 |------|------|-------|--------|---------|
 | S0.20 | [Full Sync, README & Cleanup](s0.20-terragenesis-sync-readme.spec.md) | — | Implemented | Embedded |
+| S0.21 | [Release v0.3.0](s0.21-release-v0.3.0.spec.md) | — | Draft | Embedded |
 
 ## Slice 2a — Review Debt
 
