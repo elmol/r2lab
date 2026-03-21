@@ -47,7 +47,9 @@ Traceability map for TerraGenesis-specific specs. HardTrust base specs (S0.x, S1
 | Spec | Name | Story | Status | Handoff |
 |------|------|-------|--------|---------|
 | S2b.1-V1 | [On-Chain Verify (view function)](s2b.1-v1-onchain-verify.spec.md) | S2b.1 | Implemented | Embedded |
-| S2b.1-V2 | [On-Chain Environment Hashes](s2b.1-v2-onchain-env-hashes.spec.md) | S2b.1 | Draft | Embedded |
+| S2b.1-V2 | [On-Chain Environment Hashes](s2b.1-v2-onchain-env-hashes.spec.md) | S2b.1 | Implemented | Embedded |
+| S2b-Debt-V1 | [Unify verifyCapture + verifyEnvironment](s2b-debt-v1-unify-verify.spec.md) | S2b.1 | Implemented | Embedded |
+| S2b-Debt-V2 | [Fix trailing null byte in serial](s2b-debt-v2-serial-null-byte.spec.md) | — | Implemented | Embedded |
 | S2b.2 | On-Chain Submit Proof (persistence) | S2b.2 | Future | — |
 | ADR-0010 | [On-Chain Verification Model](adr-0010-onchain-verification-model.md) | — | Proposed | — |
 
