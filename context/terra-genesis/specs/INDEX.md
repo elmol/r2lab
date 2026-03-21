@@ -21,19 +21,19 @@ Traceability map for TerraGenesis-specific specs. HardTrust base specs (S0.x, S1
 
 | Spec | Name | Story | Status | Handoff |
 |------|------|-------|--------|---------|
-| S2a.3-V1 | [E2E Capture Cases](s2a.3-v1-e2e-capture.spec.md) | — | Approved | Pending |
+| S2a.3-V1 | [E2E Capture Cases](s2a.3-v1-e2e-capture.spec.md) | — | Implemented | Embedded |
 
 ## Sync & Documentation
 
 | Spec | Name | Story | Status | Handoff |
 |------|------|-------|--------|---------|
-| S0.20 | [Full Sync, README & Cleanup](s0.20-terragenesis-sync-readme.spec.md) | — | Approved | Pending |
+| S0.20 | [Full Sync, README & Cleanup](s0.20-terragenesis-sync-readme.spec.md) | — | Implemented | Embedded |
 
 ## Slice 2a — Review Debt
 
 | Spec | Name | Story | Status | Handoff |
 |------|------|-------|--------|---------|
-| S2a-Debt-V1 | [Review Fixes](s2a-debt-v1-review-fixes.spec.md) | — | Approved | Pending |
+| S2a-Debt-V1 | [Review Fixes](s2a-debt-v1-review-fixes.spec.md) | — | Implemented | Embedded |
 
 ### Execution Order
 
