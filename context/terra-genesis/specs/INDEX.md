@@ -21,7 +21,7 @@ Traceability map for TerraGenesis-specific specs. HardTrust base specs (S0.x, S1
 
 | Spec | Name | Story | Status | Handoff |
 |------|------|-------|--------|---------|
-| S2a.3-V1 | [E2E Capture Cases](s2a.3-v1-e2e-capture.spec.md) | S2a.3 | Approved | Pending |
+| S2a.3-V1 | [E2E Capture Cases](s2a.3-v1-e2e-capture.spec.md) | — | Approved | Pending |
 
 ## Slice 2a — Review Debt
 
