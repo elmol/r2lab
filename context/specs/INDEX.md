@@ -172,6 +172,8 @@ V1 and V2 can run in PARALLEL (independent binaries).
 | S0.15 | [Versioning Workflow](s0.15-versioning-workflow.spec.md) | Implemented | [s0.15-handoff](../handoff/s0.15-handoff.md) |
 | S0.16 | [Version Check Script](s0.16-version-check-script.spec.md) | Implemented | [s0.16-handoff](../handoff/s0.16-handoff.md) |
 | S0.17 | [HardTrust README Update](s0.17-readme-update.spec.md) | Implemented | Embedded |
+| S0.18 | [Install Trap Fix](s0.18-install-trap-fix.spec.md) | Implemented | [s0.18-handoff](../handoff/s0.18-handoff.md) |
+| S0.18 | [Install Device Fix](s0.18-install-device-fix.spec.md) | Draft | [s0.18-handoff](../handoff/s0.18-handoff.md) |
 
 ## Notes
 
