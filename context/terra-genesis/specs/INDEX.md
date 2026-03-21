@@ -54,6 +54,13 @@ Traceability map for TerraGenesis-specific specs. HardTrust base specs (S0.x, S1
 | S2b.2 | On-Chain Submit Proof (persistence) | S2b.2 | Future | — |
 | ADR-0010 | [On-Chain Verification Model](adr-0010-onchain-verification-model.md) | — | Proposed | — |
 
+## Slice 2c — Web Portal
+
+| Spec | Name | Story | Status | Handoff |
+|------|------|-------|--------|---------|
+| S2c-Web-V1 | [Registry Web Portal (Retrospective)](s2c-web-v1-registry-portal.spec.md) | S2c | Implemented (manual) | — |
+| S0.22 | [README Update: Web Portal](s0.22-readme-web-update.spec.md) | — | Draft | Embedded |
+
 ### Execution Order
 
 S2a.1: V1 first (protocol). V2 depends on V1. V3 depends on V1.

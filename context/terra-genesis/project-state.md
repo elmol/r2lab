@@ -6,7 +6,7 @@
 - **Last session:** 2026-03-21
 
 ## Last Session Summary
-Slice 2b fully implemented: S2b.1-V1 (on-chain verifyCapture), S2b.1-V2 (env hashes), S2b-Debt-V1 (unified 6-param verifyCapture), S2b-Debt-V2 (RPi serial null byte fix). All 54 tests pass. Full sync audit done — README needs update for new features, version bump 0.1.0→0.3.0 pending. S0.21 release spec created.
+Full review of terra-genesis after hackathon web sprint. Web portal (React + Vite + ethers.js) was added manually in PRs #16 and #20 — retrospective spec S2c-Web-V1 created. README gap identified: web app not mentioned at all. S0.22 spec drafted for README update. Branding issue: header says "HardTrust" not "TerraGenesis". v0.3.0 released.
 
 ## Current Product
 - **Name:** TerraGenesis
@@ -35,7 +35,7 @@ Slice 2b fully implemented: S2b.1-V1 (on-chain verifyCapture), S2b.1-V2 (env has
 
 ## Specs & Handoffs
 - `context/terra-genesis/specs/INDEX.md` — Traceability index
-- 14 specs total:
+- 16 specs total:
   - **Slice 2a (all Implemented):**
     - S2a.1-V1 Protocol Generic Signing
     - S2a.1-V2 Device Capture Command
@@ -53,8 +53,11 @@ Slice 2b fully implemented: S2b.1-V1 (on-chain verifyCapture), S2b.1-V2 (env has
     - S2b-Debt-V1 Unify verifyCapture (Implemented)
     - S2b-Debt-V2 Serial Null Byte Fix (Implemented)
     - S2b.2 On-Chain Submit Proof (Future)
+  - **Slice 2c (Web Portal):**
+    - S2c-Web-V1 Registry Web Portal — Retrospective (Implemented, manual)
   - **Sync & Release:**
-    - S0.21 Release v0.3.0 (Draft)
+    - S0.21 Release v0.3.0 (Implemented)
+    - S0.22 README Update: Web Portal (Draft)
   - **ADRs:**
     - ADR-0009 Capture Script Hardware Adapter
     - ADR-0010 On-Chain Verification Model (Proposed)
@@ -71,5 +74,10 @@ Slice 2b fully implemented: S2b.1-V1 (on-chain verifyCapture), S2b.1-V2 (env has
 - E2E: 6 cases (reading +/-, capture +/-, env match/mismatch)
 - v0.2.0 released with Slice 2a
 
+## TerraGenesis Repo State (updated)
+- Web portal: `web/` — React 19 + Vite + ethers.js (registry browser, device registration, capture verification)
+- Branding issue: web header says "HardTrust" instead of "TerraGenesis"
+- v0.3.0 released and tagged
+
 ## Next Action
-Execute S0.21 handoff — README update, version bump to 0.3.0, SHA256SUMS, tag v0.3.0. Future: S2b.2 (submit proof persistence), Option B (Merkle prehash for trustless env).
+Execute S0.22 — update README with web portal section, fix repo structure, update hackathon scope. Then UX adaptations as discussed with user. Future: S2b.2 (submit proof persistence), branding fix.
