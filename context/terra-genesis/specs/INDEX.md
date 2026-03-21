@@ -14,7 +14,7 @@ Traceability map for TerraGenesis-specific specs. HardTrust base specs (S0.x, S1
 
 | Spec | Name | Story | Status | Handoff |
 |------|------|-------|--------|---------|
-| S2a.2-V1 | [TerraScope Capture Script](s2a.2-v1-capture-script.spec.md) | S2a.2 | Approved | Pending |
+| S2a.2-V1 | [TerraScope Capture Script](s2a.2-v1-capture-script.spec.md) | S2a.2 | Implemented | Embedded |
 | S2a.2-V2 | [Default --cmd + Install](s2a.2-v2-default-cmd-and-install.spec.md) | S2a.2 | Approved | Pending |
 
 ### Execution Order
