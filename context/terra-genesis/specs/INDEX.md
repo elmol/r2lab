@@ -15,9 +15,16 @@ Traceability map for TerraGenesis-specific specs. HardTrust base specs (S0.x, S1
 | Spec | Name | Story | Status | Handoff |
 |------|------|-------|--------|---------|
 | S2a.2-V1 | [TerraScope Capture Script](s2a.2-v1-capture-script.spec.md) | S2a.2 | Implemented | Embedded |
-| S2a.2-V2 | [Default --cmd + Install](s2a.2-v2-default-cmd-and-install.spec.md) | S2a.2 | Approved | Pending |
+| S2a.2-V2 | [Default --cmd + Install](s2a.2-v2-default-cmd-and-install.spec.md) | S2a.2 | Implemented | Embedded |
+
+## Slice 2a — Review Debt
+
+| Spec | Name | Story | Status | Handoff |
+|------|------|-------|--------|---------|
+| S2a-Debt-V1 | [Review Fixes](s2a-debt-v1-review-fixes.spec.md) | — | Approved | Pending |
 
 ### Execution Order
 
 S2a.1: V1 first (protocol). V2 depends on V1. V3 depends on V1.
 S2a.2: V1 first (capture script). V2 depends on V1 (needs the script to install).
+S2a-Debt: After all S2a specs implemented. Single spec covering 6 fixes.
