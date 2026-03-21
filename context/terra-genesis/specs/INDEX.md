@@ -23,6 +23,13 @@ Traceability map for TerraGenesis-specific specs. HardTrust base specs (S0.x, S1
 |------|------|-------|--------|---------|
 | S2a.3-V1 | [E2E Capture Cases](s2a.3-v1-e2e-capture.spec.md) | — | Implemented | Embedded |
 
+## Slice 2a — Environment Attestation
+
+| Spec | Name | Story | Status | Handoff |
+|------|------|-------|--------|---------|
+| S2a.4-V1 | [Environment Attestation](s2a.4-v1-environment-attestation.spec.md) | S2a.4 | Implemented | Embedded |
+| S2a.4-V2 | [Embedded Release Hashes](s2a.4-v2-embedded-release-hashes.spec.md) | S2a.4 | Implemented | Embedded |
+
 ## Sync & Documentation
 
 | Spec | Name | Story | Status | Handoff |
@@ -34,6 +41,15 @@ Traceability map for TerraGenesis-specific specs. HardTrust base specs (S0.x, S1
 | Spec | Name | Story | Status | Handoff |
 |------|------|-------|--------|---------|
 | S2a-Debt-V1 | [Review Fixes](s2a-debt-v1-review-fixes.spec.md) | — | Implemented | Embedded |
+
+## Slice 2b — On-Chain Verification
+
+| Spec | Name | Story | Status | Handoff |
+|------|------|-------|--------|---------|
+| S2b.1-V1 | [On-Chain Verify (view function)](s2b.1-v1-onchain-verify.spec.md) | S2b.1 | Implemented | Embedded |
+| S2b.1-V2 | [On-Chain Environment Hashes](s2b.1-v2-onchain-env-hashes.spec.md) | S2b.1 | Draft | Embedded |
+| S2b.2 | On-Chain Submit Proof (persistence) | S2b.2 | Future | — |
+| ADR-0010 | [On-Chain Verification Model](adr-0010-onchain-verification-model.md) | — | Proposed | — |
 
 ### Execution Order
 
