@@ -81,5 +81,13 @@ README reorganized: project context (narrative, vision, what's next) separated f
 - Playwright MCP configured (.mcp.json) for visual validation
 - v0.3.0 released and tagged
 
+## Avalanche Fuji Deployment
+- Contract (verified): 0xF7497fC600Bd4877A0Ad3C0B3BBBEE80b9038477
+- Attester: 0xba9C2f6Edf0C9968F0b3af39a7B52A8Ea03c06e5
+- Registered Device: 0xAf2f889073Fa571Fd13526A7adB105560B0B40f5
+- Explorer: https://testnet.snowtrace.io/address/0xF7497fC600Bd4877A0Ad3C0B3BBBEE80b9038477
+- Web supports --mode fuji (Vite env modes)
+- Network status indicator in header (green dot + chain name)
+
 ## Next Action
-Hackathon close. All specs implemented, docs complete, repos synced. Future: S2b.2 (submit proof persistence), Layer 2 device security (Secure Boot/TPM), GenLayer intelligent validation, multi-device DePIN.
+Hackathon close. All specs implemented, docs complete, repos synced, deployed on Fuji. Future: S2b.2 (submit proof persistence), Layer 2 device security (Secure Boot/TPM), GenLayer intelligent validation, multi-device DePIN.
