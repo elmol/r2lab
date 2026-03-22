@@ -1,2 +1,5 @@
 # Demo secrets
 context/terra-genesis/.env.demo
+
+# Claude Code local session data
+.claude/projects/

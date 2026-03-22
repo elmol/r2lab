@@ -37,7 +37,7 @@ Note: Off-chain attester verify already works (S2a.1-V3). Slice 2b now focuses o
 | S2b.1 | On-chain verify — view function in HardTrust.sol does ecrecover + device registry check, attester CLI invokes it | S2a.1 |
 | S2b.2 | On-chain submit proof — persist capture proof on-chain for proof-of-existence (future) | S2b.1 |
 
-**ADR pending:** ADR-0010 On-Chain Verification Model (Model B — trustless, ecrecover in contract, no trusted attester)
+**ADR:** ADR-0010 On-Chain Verification Model (Model B — trustless, ecrecover in contract, no trusted attester) — Proposed
 
 ### Key Architecture Decisions (Slice 2b)
 
@@ -48,6 +48,14 @@ Note: Off-chain attester verify already works (S2a.1-V3). Slice 2b now focuses o
 - **Requires:** `mapping(address => bool) public registeredDevices` reverse lookup in HardTrust.sol
 - **Prehash compatible:** Rust keccak256 prehash is already EVM-compatible for ecrecover
 
+### Slice 2c — Web Portal
+
+| Story | Description | Dependencies |
+|-------|-------------|--------------|
+| S2c | Web-based registry browser, device registration, and capture verification UI | S2b.1 (on-chain verify) |
+
+Note: S2c was built retrospectively (S2c-Web-V1 manual, S2c-Web-V2 branding via SDD). No formal story file — specs serve as the source of truth.
+
 ---
 
-## Current Focus: Slice 2a (2a.4 in progress)
+## Current Status: All Slices 2a, 2b, 2c implemented. Documentation phase (S0.22).

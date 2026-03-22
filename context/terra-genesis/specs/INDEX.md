@@ -35,7 +35,7 @@ Traceability map for TerraGenesis-specific specs. HardTrust base specs (S0.x, S1
 | Spec | Name | Story | Status | Handoff |
 |------|------|-------|--------|---------|
 | S0.20 | [Full Sync, README & Cleanup](s0.20-terragenesis-sync-readme.spec.md) | — | Implemented | Embedded |
-| S0.21 | [Release v0.3.0](s0.21-release-v0.3.0.spec.md) | — | Draft | Embedded |
+| S0.21 | [Release v0.3.0](s0.21-release-v0.3.0.spec.md) | — | Implemented | Embedded |
 
 ## Slice 2a — Review Debt
 
@@ -52,6 +52,7 @@ Traceability map for TerraGenesis-specific specs. HardTrust base specs (S0.x, S1
 | S2b-Debt-V1 | [Unify verifyCapture + verifyEnvironment](s2b-debt-v1-unify-verify.spec.md) | S2b.1 | Implemented | Embedded |
 | S2b-Debt-V2 | [Fix trailing null byte in serial](s2b-debt-v2-serial-null-byte.spec.md) | — | Implemented | Embedded |
 | S2b.2 | On-Chain Submit Proof (persistence) | S2b.2 | Future | — |
+| ADR-0009 | [Capture Script Hardware Adapter](adr-0009-capture-script-hardware-adapter.md) | — | Accepted | — |
 | ADR-0010 | [On-Chain Verification Model](adr-0010-onchain-verification-model.md) | — | Proposed | — |
 
 ## Slice 2c — Web Portal
