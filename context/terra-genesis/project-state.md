@@ -6,7 +6,7 @@
 - **Last session:** 2026-03-22
 
 ## Last Session Summary
-Final hackathon cleanup: S0.22 README narrative rewrite (DeSci vision, Night Science, What's Next with security roadmap + GenLayer). Full sync audit — ADR-0010 relocated, stale branches cleaned, all specs/stories/ADRs verified. Both repos fully synced and clean.
+README reorganized: project context (narrative, vision, what's next) separated from developer guide (e2e, capture, on-chain, quick start). "The Wire" renamed to "End-to-End Verification". All sync cleanup done — branches clean, ADRs relocated, specs complete.
 
 ## Current Product
 - **Name:** TerraGenesis
