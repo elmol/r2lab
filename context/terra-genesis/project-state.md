@@ -3,10 +3,10 @@
 ## Status
 - **Phase:** 4/5/6 — Feature Specs + Implementation Handoff + Review (iterative)
 - **Started:** 2026-03-20
-- **Last session:** 2026-03-21
+- **Last session:** 2026-03-22
 
 ## Last Session Summary
-S2c-Web-V2 fully implemented and merged: TerraGenesis branding (teal palette from biotexturas), light theme, UI simplification (11→5 sections), images (TerraScope photo, microscopy capture, biotexturas logo), hero with split layout, visual polish. S0.22 README update still pending.
+Final hackathon cleanup: S0.22 README narrative rewrite (DeSci vision, Night Science, What's Next with security roadmap + GenLayer). Full sync audit — ADR-0010 relocated, stale branches cleaned, all specs/stories/ADRs verified. Both repos fully synced and clean.
 
 ## Current Product
 - **Name:** TerraGenesis
@@ -58,7 +58,7 @@ S2c-Web-V2 fully implemented and merged: TerraGenesis branding (teal palette fro
     - S2c-Web-V2 TerraGenesis Branding + Light Theme + Images (Implemented)
   - **Sync & Release:**
     - S0.21 Release v0.3.0 (Implemented)
-    - S0.22 README Update: Web Portal (Draft)
+    - S0.22 README Narrative, Web Portal & Vision (Implemented)
   - **ADRs:**
     - ADR-0009 Capture Script Hardware Adapter
     - ADR-0010 On-Chain Verification Model (Proposed)
@@ -82,4 +82,4 @@ S2c-Web-V2 fully implemented and merged: TerraGenesis branding (teal palette fro
 - v0.3.0 released and tagged
 
 ## Next Action
-Execute S0.22 — update README with web portal section, fix repo structure, update hackathon scope. Future: S2b.2 (submit proof persistence), further UX refinements.
+Hackathon close. All specs implemented, docs complete, repos synced. Future: S2b.2 (submit proof persistence), Layer 2 device security (Secure Boot/TPM), GenLayer intelligent validation, multi-device DePIN.
