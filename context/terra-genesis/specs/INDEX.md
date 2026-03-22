@@ -59,6 +59,7 @@ Traceability map for TerraGenesis-specific specs. HardTrust base specs (S0.x, S1
 | Spec | Name | Story | Status | Handoff |
 |------|------|-------|--------|---------|
 | S2c-Web-V1 | [Registry Web Portal (Retrospective)](s2c-web-v1-registry-portal.spec.md) | S2c | Implemented (manual) | — |
+| S2c-Web-V2 | [TerraGenesis Branding](s2c-web-v2-branding.spec.md) | S2c | Draft | Embedded |
 | S0.22 | [README Update: Web Portal](s0.22-readme-web-update.spec.md) | — | Draft | Embedded |
 
 ### Execution Order
