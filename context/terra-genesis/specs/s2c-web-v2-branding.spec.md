@@ -1,6 +1,6 @@
 # S2c-Web-V2 — TerraGenesis Branding + Simplification
 
-> **Status:** Draft
+> **Status:** Implemented
 > **Story:** S2c — Web Portal
 > **Depends on:** S2c-Web-V1 (implemented)
 

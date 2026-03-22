@@ -6,7 +6,7 @@
 - **Last session:** 2026-03-21
 
 ## Last Session Summary
-Full review of terra-genesis after hackathon web sprint. Web portal (React + Vite + ethers.js) was added manually in PRs #16 and #20 — retrospective spec S2c-Web-V1 created. README gap identified: web app not mentioned at all. S0.22 spec drafted for README update. Branding issue: header says "HardTrust" not "TerraGenesis". v0.3.0 released.
+S2c-Web-V2 fully implemented and merged: TerraGenesis branding (teal palette from biotexturas), light theme, UI simplification (11→5 sections), images (TerraScope photo, microscopy capture, biotexturas logo), hero with split layout, visual polish. S0.22 README update still pending.
 
 ## Current Product
 - **Name:** TerraGenesis
@@ -55,6 +55,7 @@ Full review of terra-genesis after hackathon web sprint. Web portal (React + Vit
     - S2b.2 On-Chain Submit Proof (Future)
   - **Slice 2c (Web Portal):**
     - S2c-Web-V1 Registry Web Portal — Retrospective (Implemented, manual)
+    - S2c-Web-V2 TerraGenesis Branding + Light Theme + Images (Implemented)
   - **Sync & Release:**
     - S0.21 Release v0.3.0 (Implemented)
     - S0.22 README Update: Web Portal (Draft)
@@ -76,8 +77,9 @@ Full review of terra-genesis after hackathon web sprint. Web portal (React + Vit
 
 ## TerraGenesis Repo State (updated)
 - Web portal: `web/` — React 19 + Vite + ethers.js (registry browser, device registration, capture verification)
-- Branding issue: web header says "HardTrust" instead of "TerraGenesis"
+- Branding complete: TerraGenesis identity, light theme, biotexturas logo, TerraScope images
+- Playwright MCP configured (.mcp.json) for visual validation
 - v0.3.0 released and tagged
 
 ## Next Action
-Execute S0.22 — update README with web portal section, fix repo structure, update hackathon scope. Then UX adaptations as discussed with user. Future: S2b.2 (submit proof persistence), branding fix.
+Execute S0.22 — update README with web portal section, fix repo structure, update hackathon scope. Future: S2b.2 (submit proof persistence), further UX refinements.
